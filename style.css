@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0f0f0f;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
+}
+
+/* ================= HEADER ================= */
+
+.site-header {
+  text-align: center;
+  padding: 20px 10px;
+  background: #000;
+  border-bottom: 1px solid #222;
+}
+
+.site-header h1 {
+  margin: 0;
+  color: #00ffd5;
+}
+
+.site-header p {
+  margin-top: 5px;
+  color: #aaa;
+}
+
+/* ================= HOME PAGE ================= */
+
+.home-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding: 15px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.post-card {
+  background: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,.5);
+}
+
+.post-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.post-card h2 {
+  font-size: 15px;
+  padding: 10px;
+  margin: 0;
+}
+
+.post-card .date {
+  display: block;
+  padding: 0 10px 10px;
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* ================= POST PAGE ================= */
+
+.post-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 15px;
+}
+
+/* Post ke andar images */
+.post-container img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 15px auto;
+  border-radius: 8px;
+}
+
+/* Post ke andar h1 bilkul normal rahe */
+.post-container h1 {
+  display: block;
+}
+
+/* ================= FOOTER ================= */
+
+.site-footer {
+  text-align: center;
+  padding: 15px;
+  font-size: 13px;
+  color: #aaa;
+  border-top: 1px solid #222;
+  margin-top: 20px;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+  .home-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
