@@ -62,7 +62,7 @@ body {
 }
 
 .post-card .date {
-  display: block;
+  display: none;
   padding: 0 10px 10px;
   font-size: 12px;
   color: #aaa;
@@ -87,7 +87,7 @@ body {
 
 /* Post ke andar h1 bilkul normal rahe */
 .post-container h1 {
-  display: block;
+  display: none;
 }
 
 /* ================= FOOTER ================= */
@@ -107,4 +107,37 @@ body {
   .home-container {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+/* ===== Search Bar ===== */
+.search-box {
+  padding: 10px 15px;
+  text-align: center;
+}
+
+.search-box input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+}
+
+/* ===== Back Button ===== */
+.back-btn {
+  display: inline-block;
+  margin-bottom: 15px;
+  padding: 6px 10px;
+  font-size: 14px;
+  color: #00ffd5;
+  text-decoration: none;
+  border: 1px solid #00ffd5;
+  border-radius: 6px;
+}
+
+.back-btn:hover {
+  background: #00ffd5;
+  color: #000;
 }
