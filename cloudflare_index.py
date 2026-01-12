@@ -71,7 +71,7 @@ searchInput.addEventListener("keyup", function () {{
       ? ""
       : "none";
   }});
-});
+}});
 </script>
 
 </body>
@@ -81,4 +81,4 @@ searchInput.addEventListener("keyup", function () {{
 with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
     f.write(html)
 
-print("✅ index.html generated with search bar")
+print("✅ index.html generated successfully with permanent search bar")	
