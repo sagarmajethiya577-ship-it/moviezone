@@ -30,7 +30,7 @@ for file in files:
     </a>
     """
 
-html = """<!DOCTYPE html>
+html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta name="monetag" content="3022723db0ecc4b869eb8ce9984399b0">
@@ -43,37 +43,36 @@ html = """<!DOCTYPE html>
 <body>
 
 <header class="site-header">
-  <a href="/" class="site-title">Movie Zone 🍿</a>
-  <p class="tagline">Latest Movies & Web Series</p>
+  <h1>Movie Zone 🍿</h1>
 </header>
 
 <div class="search-box">
   <input type="text" id="searchInput" placeholder="Search movies...">
 </div>
 
+<p class="tagline">Latest Movies & Web Series</p>
+
 <main class="home-container" id="postList">
 {cards_html}
 </main>
 
 <footer class="site-footer">
-  © 2026 Movie Zone 🍿
+  © 2026 Movie Zone 🍿 | All Rights Reserved
 </footer>
 
 <script>
-let timer;
-const input = document.getElementById("searchInput");
+const searchInput = document.getElementById("searchInput");
 
-input.addEventListener("keyup", function () {{
-  clearTimeout(timer);
-  timer = setTimeout(function () {{
-    const value = input.value.toLowerCase();
-    document.querySelectorAll(".post-card").forEach(function(card) {{
-      card.style.display = card.innerText.toLowerCase().includes(value)
-        ? "block"
-        : "none";
-    }});
-  }}, 300);
-});
+searchInput.addEventListener("keyup", function () {{
+  const value = this.value.toLowerCase();
+  const posts = document.querySelectorAll(".post-card");
+
+  posts.forEach(post => {{
+    post.style.display = post.innerText.toLowerCase().includes(value)
+      ? ""
+      : "none";
+  }});
+}});
 </script>
 
 </body>
@@ -83,4 +82,4 @@ input.addEventListener("keyup", function () {{
 with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
     f.write(html)
 
-print("✅ index.html generated successfully")
+print("✅ index.html generated successfully with permanent search bar")
