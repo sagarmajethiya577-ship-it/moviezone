@@ -30,9 +30,10 @@ for file in files:
     </a>
     """
 
-html = f"""<!DOCTYPE html>
+html = """<!DOCTYPE html>
 <html lang="en">
 <head>
+<meta name="monetag" content="3022723db0ecc4b869eb8ce9984399b0">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Movie Zone 🍿</title>
