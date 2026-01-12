@@ -42,36 +42,37 @@ html = f"""<!DOCTYPE html>
 <body>
 
 <header class="site-header">
-  <h1>Movie Zone 🍿</h1>
+  <a href="/" class="site-title">Movie Zone 🍿</a>
+  <p class="tagline">Latest Movies & Web Series</p>
 </header>
 
 <div class="search-box">
   <input type="text" id="searchInput" placeholder="Search movies...">
 </div>
 
-<p class="tagline">Latest Movies & Web Series</p>
-
 <main class="home-container" id="postList">
 {cards_html}
 </main>
 
 <footer class="site-footer">
-  © 2026 Movie Zone 🍿 | All Rights Reserved
+  © 2026 Movie Zone 🍿
 </footer>
 
 <script>
-const searchInput = document.getElementById("searchInput");
+let timer;
+const input = document.getElementById("searchInput");
 
-searchInput.addEventListener("keyup", function () {{
-  const value = this.value.toLowerCase();
-  const posts = document.querySelectorAll(".post-card");
-
-  posts.forEach(post => {{
-    post.style.display = post.innerText.toLowerCase().includes(value)
-      ? ""
-      : "none";
-  }});
-}});
+input.addEventListener("keyup", function () {{
+  clearTimeout(timer);
+  timer = setTimeout(function () {{
+    const value = input.value.toLowerCase();
+    document.querySelectorAll(".post-card").forEach(function(card) {{
+      card.style.display = card.innerText.toLowerCase().includes(value)
+        ? "block"
+        : "none";
+    }});
+  }}, 300);
+});
 </script>
 
 </body>
@@ -81,4 +82,4 @@ searchInput.addEventListener("keyup", function () {{
 with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
     f.write(html)
 
-print("✅ index.html generated successfully with permanent search bar")	
+print("✅ index.html generated successfully")
