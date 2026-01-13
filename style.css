@@ -19,14 +19,46 @@ body {
   border-bottom: 1px solid #222;
 }
 
-.site-header h1 {
-  margin: 0;
+.site-title {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: bold;
   color: #00ffd5;
+  letter-spacing: 1px;
 }
 
-.site-header p {
+.site-title:hover {
+  color: #00c9aa;
+}
+
+.tagline {
   margin-top: 5px;
   color: #aaa;
+  font-size: 14px;
+}
+
+/* ================= SEARCH ================= */
+
+.search-box {
+  padding: 12px;
+  text-align: center;
+}
+
+.search-box input {
+  width: 90%;
+  max-width: 420px;
+  padding: 10px 14px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 14px;
+}
+
+.search-box input::placeholder {
+  color: #888;
 }
 
 /* ================= HOME PAGE ================= */
@@ -51,7 +83,6 @@ body {
 
 .post-card img {
   width: 100%;
-  height: auto;
   display: block;
 }
 
@@ -63,9 +94,6 @@ body {
 
 .post-card .date {
   display: none;
-  padding: 0 10px 10px;
-  font-size: 12px;
-  color: #aaa;
 }
 
 /* ================= POST PAGE ================= */
@@ -76,7 +104,6 @@ body {
   padding: 15px;
 }
 
-/* Post ke andar images */
 .post-container img {
   max-width: 100%;
   height: auto;
@@ -85,9 +112,26 @@ body {
   border-radius: 8px;
 }
 
-/* Post ke andar h1 bilkul normal rahe */
 .post-container h1 {
   display: none;
+}
+
+/* Back Button */
+
+.back-btn {
+  display: inline-block;
+  margin-bottom: 15px;
+  padding: 6px 10px;
+  font-size: 14px;
+  color: #00ffd5;
+  text-decoration: none;
+  border: 1px solid #00ffd5;
+  border-radius: 6px;
+}
+
+.back-btn:hover {
+  background: #00ffd5;
+  color: #000;
 }
 
 /* ================= FOOTER ================= */
@@ -107,37 +151,4 @@ body {
   .home-container {
     grid-template-columns: repeat(2, 1fr);
   }
-}
-
-/* ===== Search Bar ===== */
-.search-box {
-  padding: 10px 15px;
-  text-align: center;
-}
-
-.search-box input {
-  width: 100%;
-  max-width: 400px;
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
-  outline: none;
-  font-size: 15px;
-}
-
-/* ===== Back Button ===== */
-.back-btn {
-  display: inline-block;
-  margin-bottom: 15px;
-  padding: 6px 10px;
-  font-size: 14px;
-  color: #00ffd5;
-  text-decoration: none;
-  border: 1px solid #00ffd5;
-  border-radius: 6px;
-}
-
-.back-btn:hover {
-  background: #00ffd5;
-  color: #000;
 }
