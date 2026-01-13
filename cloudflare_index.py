@@ -6,7 +6,16 @@ OUTPUT_FILE = "index.html"
 
 cards_html = ""
 
-files = sorted(os.listdir(POSTS_DIR), reverse=True)
+files = [
+    f for f in os.listdir(POSTS_DIR)
+    if f.endswith(".html")
+]
+
+# latest modified file sabse upar
+files.sort(
+    key=lambda f: os.path.getmtime(os.path.join(POSTS_DIR, f)),
+    reverse=True
+)
 
 for file in files:
     if not file.endswith(".html"):
