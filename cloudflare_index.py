@@ -6,7 +6,7 @@ OUTPUT_FILE = "index.html"
 
 cards_html = ""
 
-# 🔥 Latest modified files first (new post = top)
+# 🔥 Newest post always on TOP
 files = sorted(
     os.listdir(POSTS_DIR),
     key=lambda x: os.path.getmtime(os.path.join(POSTS_DIR, x)),
@@ -30,18 +30,16 @@ for file in files:
 
     cards_html += f"""
     <a class="post-card" href="Posts/{file}">
-      <img src="{img_src}" alt="{title}">
-      <h2>{title}</h2>
+        <img src="{img_src}" alt="{title}">
+        <h2>{title}</h2>
     </a>
     """
 
-html = f"""<!DOCTYPE html>
+html = """<!DOCTYPE html>
 <html lang="en">
 <head>
 
-<!-- ✅ Monetag verification -->
 <meta name="monetag" content="3022723db0ecc4b869eb8ce9984399b0">
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Movie Zone 🍿</title>
@@ -61,41 +59,43 @@ html = f"""<!DOCTYPE html>
 </div>
 
 <main class="home-container" id="postList">
-{cards_html}
+""" + cards_html + """
 </main>
 
 <footer class="site-footer">
   © 2026 Movie Zone 🍿 | All Rights Reserved
 </footer>
 
-<!-- 🔥 FAST SEARCH (NO LAG even with 5000+ posts) -->
+<!-- 🚀 SUPER FAST SEARCH (NO LAG) -->
 <script>
 const input = document.getElementById("searchInput");
 const cards = document.querySelectorAll(".post-card");
 
-const cache = Array.from(cards).map(card => ({
-  el: card,
-  text: card.textContent.toLowerCase()
-}));
+const cache = Array.from(cards).map(card => {
+  return {
+    element: card,
+    text: card.textContent.toLowerCase()
+  };
+});
 
 let timer;
-input.addEventListener("input", () => {{
+input.addEventListener("input", function () {
   clearTimeout(timer);
-  timer = setTimeout(() => {{
+  timer = setTimeout(function () {
     const val = input.value.toLowerCase();
-    cache.forEach(item => {{
-      item.el.style.display = item.text.includes(val) ? "" : "none";
-    }});
-  }}, 200);
-}});
+    cache.forEach(item => {
+      item.element.style.display = item.text.includes(val) ? "" : "none";
+    });
+  }, 200);
+});
 </script>
 
-<!-- ✅ Monetag Pop / Push Ad (body end = safe + fast) -->
+<!-- Monetag -->
 <script>
-(function(s){{
+(function(s){
   s.dataset.zone='10453660';
   s.src='https://al5sm.com/tag.min.js';
-}})(document.body.appendChild(document.createElement('script')));
+})(document.body.appendChild(document.createElement('script')));
 </script>
 
 </body>
@@ -105,4 +105,4 @@ input.addEventListener("input", () => {{
 with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
     f.write(html)
 
-print("✅ index.html generated successfully (fast search + latest on top)")
+print("✅ index.html generated successfully (error-free & fast search)")
