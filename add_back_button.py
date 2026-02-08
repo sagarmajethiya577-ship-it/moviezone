@@ -1,34 +1,49 @@
 import os
 
-POSTS_DIR = "Posts"
+# Dono folders jahan posts ho sakte hain
+POSTS_DIRS = ["Posts", "Posts1"]
 
-for file in os.listdir(POSTS_DIR):
-    if not file.endswith(".html"):
+for POSTS_DIR in POSTS_DIRS:
+    if not os.path.isdir(POSTS_DIR):
         continue
 
-    path = os.path.join(POSTS_DIR, file)
+    print(f"📂 Processing folder: {POSTS_DIR}")
 
-    with open(path, "r", encoding="utf-8", errors="ignore") as f:
-        content = f.read()
+    for file in os.listdir(POSTS_DIR):
+        if not file.endswith(".html"):
+            continue
 
-    # Agar back button already hai to skip
-    if 'class="back-btn"' in content:
-        print("⏭️ Back button already exists:", file)
-        continue
+        path = os.path.join(POSTS_DIR, file)
 
-    # body ke andar back button inject karo
-    if "<body" in content.lower():
-        new_content = content.replace(
-            "<body>",
-            '<body>\n\n<a href="/" class="back-btn">← Back</a>\n',
-            1
-        )
+        with open(path, "r", encoding="utf-8", errors="ignore") as f:
+            content = f.read()
 
-        with open(path, "w", encoding="utf-8") as f:
-            f.write(new_content)
+        # Agar back button already hai to skip
+        if 'class="back-btn"' in content:
+            print(f"⏭️ Back button already exists: {POSTS_DIR}/{file}")
+            continue
 
-        print("✅ Back button added:", file)
-    else:
-        print("❌ <body> tag not found:", file)
+        # body tag ke baad back button inject karo
+        if "<body" in content.lower():
+            # exact <body> ya <body ...> dono case handle
+            lower = content.lower()
+            idx = lower.find("<body")
+            end = lower.find(">", idx)
 
-print("🎉 Done: Back button process complete")
+            if end != -1:
+                new_content = (
+                    content[:end + 1]
+                    + '\n\n<a href="/" class="back-btn">← Back</a>\n'
+                    + content[end + 1:]
+                )
+
+                with open(path, "w", encoding="utf-8") as f:
+                    f.write(new_content)
+
+                print(f"✅ Back button added: {POSTS_DIR}/{file}")
+            else:
+                print(f"❌ <body> tag malformed: {POSTS_DIR}/{file}")
+        else:
+            print(f"❌ <body> tag not found: {POSTS_DIR}/{file}")
+
+print("🎉 Done: Back button process complete (Posts + Posts1)")

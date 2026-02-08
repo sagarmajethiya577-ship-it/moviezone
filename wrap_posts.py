@@ -1,35 +1,36 @@
 import os
 
-POSTS_DIR = "Posts"
+# Dono folders jahan posts ho sakte hain
+POSTS_DIRS = ["Posts", "Posts1"]
 
-for file in os.listdir(POSTS_DIR):
-    if not file.endswith(".html"):
+for POSTS_DIR in POSTS_DIRS:
+    if not os.path.isdir(POSTS_DIR):
         continue
 
-    path = os.path.join(POSTS_DIR, file)
+    print(f"📂 Processing folder: {POSTS_DIR}")
 
-    with open(path, "r", encoding="utf-8", errors="ignore") as f:
-        content = f.read()
+    for file in os.listdir(POSTS_DIR):
+        if not file.endswith(".html"):
+            continue
 
-    if "<html" in content.lower():
-        continue
+        path = os.path.join(POSTS_DIR, file)
 
-    title = file.replace(".html", "").replace("-", " ").title()
+        with open(path, "r", encoding="utf-8", errors="ignore") as f:
+            content = f.read()
 
-    new_html = f"""<!doctype html>
+        # Agar already full HTML hai to skip
+        if "<html" in content.lower():
+            continue
+
+        title = file.replace(".html", "").replace("-", " ").title()
+
+        new_html = f"""<!doctype html>
 <html>
 <head>
   <meta charset="UTF-8">
   <title>{title}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/style.css">
-<script>
-(function(s){{
-  s.dataset.zone='10453660';
-  s.src='https://al5sm.com/tag.min.js';
-}})([document.documentElement, document.body].filter(Boolean).pop()
-  .appendChild(document.createElement('script')));
-</script>
 </head>
 
 <body>
@@ -44,10 +45,9 @@ for file in os.listdir(POSTS_DIR):
 </html>
 """
 
-    with open(path, "w", encoding="utf-8") as f:
-        f.write(new_html)
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(new_html)
 
-    print("✅ Fixed:", file)
+        print(f"✅ Wrapped: {POSTS_DIR}/{file}")
 
-print("🎉 All posts wrapped successfully")
-
+print("🎉 All posts wrapped successfully (Posts + Posts1)")
