@@ -2,22 +2,31 @@ import os
 from bs4 import BeautifulSoup
 import json
 
-POSTS_DIR = "Posts"
+# Folders jahan se posts read karni hain
+POSTS_DIRS = ["Posts", "Posts1"]
 OUTPUT_FILE = "index.html"
 
 posts_data = []
 
-files = sorted(
-    os.listdir(POSTS_DIR),
-    key=lambda x: os.path.getmtime(os.path.join(POSTS_DIR, x)),
+# 🔹 Collect all html files from both folders with mtime
+files = []
+
+for d in POSTS_DIRS:
+    if not os.path.isdir(d):
+        continue
+    for f in os.listdir(d):
+        if f.endswith(".html"):
+            files.append((d, f))
+
+# 🔹 Sort by modified time (latest first)
+files.sort(
+    key=lambda x: os.path.getmtime(os.path.join(x[0], x[1])),
     reverse=True
 )
 
-for file in files:
-    if not file.endswith(".html"):
-        continue
-
-    path = os.path.join(POSTS_DIR, file)
+# 🔹 Parse each HTML file
+for folder, file in files:
+    path = os.path.join(folder, file)
 
     with open(path, "r", encoding="utf-8", errors="ignore") as f:
         soup = BeautifulSoup(f, "html.parser")
@@ -26,15 +35,20 @@ for file in files:
     img_src = img["src"] if img else ""
 
     h1 = soup.find("h1")
-    title = h1.get_text(strip=True) if h1 else file.replace(".html", "").replace("-", " ").title()
+    title = (
+        h1.get_text(strip=True)
+        if h1
+        else file.replace(".html", "").replace("-", " ").title()
+    )
 
     posts_data.append({
         "title": title,
         "img": img_src,
-        "url": f"Posts/{file}",
+        "url": f"{folder}/{file}",   # 🔥 Posts ya Posts1 dono support
         "search": title.lower()
     })
 
+# 🔹 Generate index.html
 html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -92,13 +106,6 @@ input.addEventListener("input", () => {{
 }});
 </script>
 
-<script>
-(function(s){{
-  s.dataset.zone='10453660';
-  s.src='https://al5sm.com/tag.min.js';
-}})(document.body.appendChild(document.createElement('script')));
-</script>
-
 </body>
 </html>
 """
@@ -106,4 +113,4 @@ input.addEventListener("input", () => {{
 with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
     f.write(html)
 
-print("✅ Ultra-fast index generated (no DOM lag)")
+print("✅ Ultra-fast index generated (Posts + Posts1, no DOM lag)")
