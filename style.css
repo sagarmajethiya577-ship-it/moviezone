@@ -38,29 +38,6 @@ body {
   font-size: 14px;
 }
 
-/* ================= SEARCH ================= */
-
-.search-box {
-  padding: 12px;
-  text-align: center;
-}
-
-.search-box input {
-  width: 90%;
-  max-width: 420px;
-  padding: 10px 14px;
-  border-radius: 25px;
-  border: none;
-  outline: none;
-  background: #1a1a1a;
-  color: #fff;
-  font-size: 14px;
-}
-
-.search-box input::placeholder {
-  color: #888;
-}
-
 /* ================= HOME PAGE ================= */
 
 .home-container {
@@ -79,6 +56,11 @@ body {
   text-decoration: none;
   color: #fff;
   box-shadow: 0 4px 12px rgba(0,0,0,.5);
+  transition: transform .2s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
 }
 
 .post-card img {
@@ -92,8 +74,37 @@ body {
   margin: 0;
 }
 
-.post-card .date {
-  display: none;
+/* ================= PAGINATION ================= */
+
+.pagination {
+  text-align: center;
+  margin: 25px 0;
+}
+
+.pagination a,
+.pagination span {
+  display: inline-block;
+  margin: 4px;
+  padding: 6px 10px;
+  font-size: 14px;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.pagination a {
+  border: 1px solid #00ffd5;
+  color: #00ffd5;
+}
+
+.pagination a:hover {
+  background: #00ffd5;
+  color: #000;
+}
+
+.pagination .active {
+  background: #00ffd5;
+  color: #000;
+  font-weight: bold;
 }
 
 /* ================= POST PAGE ================= */
@@ -116,24 +127,6 @@ body {
   display: none;
 }
 
-/* Back Button */
-
-.back-btn {
-  display: inline-block;
-  margin-bottom: 15px;
-  padding: 6px 10px;
-  font-size: 14px;
-  color: #00ffd5;
-  text-decoration: none;
-  border: 1px solid #00ffd5;
-  border-radius: 6px;
-}
-
-.back-btn:hover {
-  background: #00ffd5;
-  color: #000;
-}
-
 /* ================= FOOTER ================= */
 
 .site-footer {
@@ -152,3 +145,28 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+/* ================= SEARCH BOX ================= */
+
+.search-box {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#searchInput {
+    width: 80%;
+    max-width: 500px;
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: 2px solid #ff4757; /* Eye-catching color */
+    background: #2f3542;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+#searchInput:focus {
+    box-shadow: 0 0 10px #ff4757;
+    width: 85%;
+}
+
