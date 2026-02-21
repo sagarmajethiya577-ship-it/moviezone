@@ -82,7 +82,7 @@ for page in range(total_pages):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Movie Zone 🍿</title>
+<title>Movies Zone 🍿</title>
 <link rel="stylesheet" href="style.css">
 <style>
     .pagination {{ display: flex; justify-content: center; align-items: center; gap: 5px; margin: 30px 10px; flex-wrap: wrap; }}
