@@ -6,7 +6,7 @@ POSTS_DIR = "Posts"  # Main folder jisme p1, p2 folders hain
 AD_CODE = """
 <script>
 const adConfig = {
-    link: "https://moviezone-22y.pages.dev/",
+    link: "https://omg10.com/4/10814453",
     expiry: 24 * 60 * 60 * 1000
 };
 
