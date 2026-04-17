@@ -18,7 +18,6 @@ BASE_URL = "https://moviezone-22y.pages.dev/Posts/p20/"
 TARGETS = [
      "https://t.me/moviesrequest044",
      "https://t.me/Moviezonechathouse",
-     "https://t.me/Moviesrequest100"
 ]
 
 DELAY = 30  # 10 minutes
