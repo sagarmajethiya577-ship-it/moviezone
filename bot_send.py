@@ -13,7 +13,7 @@ phone_number = "+919512339243"
 # ==============================
 
 SOURCE_DIR = "/sdcard/vegamovies_demo_post"
-BASE_URL = "https://moviezone-22y.pages.dev/Posts/p20/"
+BASE_URL = "https://moviezone-22y.pages.dev/Posts/p1/"
 
 TARGETS = [
      "https://t.me/moviesrequest044",
