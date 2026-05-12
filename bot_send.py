@@ -12,7 +12,7 @@ api_hash = "9693b684498bf93a949bf50ba0573fc3"
 phone_number = "+919512339243"
 # ==============================
 
-SOURCE_DIR = "/sdcard/vegamovies_demo_post2"
+SOURCE_DIR = "/sdcard/vegamovies_demo_post"
 BASE_URL = "https://moviezone-22y.pages.dev/Posts/p20/"
 
 TARGETS = [
