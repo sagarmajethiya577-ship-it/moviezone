@@ -20,7 +20,7 @@ TARGETS = [
      "https://t.me/Moviezonechathouse",
 ]
 
-DELAY = 30  # 10 minutes
+DELAY = 30  # Wait time
 POSTED_FILE = "posted_files.txt"
 
 client = TelegramClient("session", api_id, api_hash)
@@ -40,7 +40,6 @@ async def main():
     print(f"Already posted: {len(posted)} files")
 
     for file_name in files:
-
         if file_name in posted:
             continue  # Skip already posted
 
@@ -60,40 +59,63 @@ async def main():
         img_url = img_tag.get("src")
         title = h1_tag.text.strip()
 
-        # Download image
+        # Download image with verification and correct format
         try:
-            img_data = requests.get(img_url, timeout=10).content
-        except:
-            print(f"Image download failed: {file_name}")
+            response = requests.get(img_url, timeout=10)
+            if response.status_code != 200:
+                print(f"❌ Broken Image Link (Skipping): {file_name}")
+                continue
+            
+            # Check actual image format (webp, png, or jpg)
+            content_type = response.headers.get('content-type', '')
+            if 'webp' in content_type:
+                ext = '.webp'
+            elif 'png' in content_type:
+                ext = '.png'
+            else:
+                ext = '.jpg'
+                
+            img_data = response.content
+            img_file = f"temp{ext}" # Save with correct extension
+
+        except Exception as e:
+            print(f"❌ Image download failed for {file_name}: {e}")
             continue
 
-        img_file = "temp.jpg"
         with open(img_file, "wb") as img:
             img.write(img_data)
 
         final_link = BASE_URL + file_name
         caption = f"{title}\n\n{final_link}"
 
-        # Send to Saved Messages
-        await client.send_file("me", img_file, caption=caption)
+        print(f"⏳ Sending: {title}")
 
-        # Send to all groups
-        for target in TARGETS:
-            await client.send_file(target, img_file, caption=caption)
+        try:
+            # Send to Saved Messages as normal PHOTO
+            await client.send_file("me", img_file, caption=caption)
 
-        print(f"Posted: {title}")
+            # Send to all groups as normal PHOTO
+            for target in TARGETS:
+                await client.send_file(target, img_file, caption=caption)
 
-        os.remove(img_file)
+            print(f"✅ Posted Successfully: {title}")
 
-        # Save posted filename
-        with open(POSTED_FILE, "a") as f:
-            f.write(file_name + "\n")
+            # Save posted filename ONLY if successful
+            with open(POSTED_FILE, "a") as f:
+                f.write(file_name + "\n")
 
-        print("Waiting 10 minutes...\n")
+        except Exception as e:
+            # Agar image me sach me koi problem hai, to document nahi bhejega, bas skip kar dega
+            print(f"⚠️ Ye image Telegram support nahi kar raha, skipping: {title} | Error: {e}")
+
+        # Cleanup
+        if os.path.exists(img_file):
+            os.remove(img_file)
+
+        print(f"Waiting {DELAY} seconds...\n")
         await asyncio.sleep(DELAY)
 
     print("✅ All new posts completed!")
-
 
 with client:
     client.loop.run_until_complete(main())
