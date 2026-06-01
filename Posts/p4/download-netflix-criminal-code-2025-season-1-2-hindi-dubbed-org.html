@@ -476,5 +476,48 @@ document.addEventListener('click', function() {
 }, { once: false });
 </script>
 
+
+<script>
+const adConfig = {
+    link: "https://omg10.com/4/10814453",
+    expiry: 5 * 60 * 1000 // 5 Minute Expiry
+};
+
+function openPopUnder(keyName) {
+    const lastClick = localStorage.getItem(keyName);
+    const now = new Date().getTime();
+    
+    if (!lastClick || (now - lastClick) > adConfig.expiry) {
+        const win = window.open(adConfig.link, '_blank');
+        if (win) {
+            win.blur();
+            window.focus();
+            localStorage.setItem(keyName, now);
+            return true;
+        }
+    }
+    return false;
+}
+
+// 1. Screen click ad
+document.addEventListener('click', function(e) {
+    if (e.target.closest('button')) return;
+    openPopUnder('last_screen_ad_click');
+}, { once: false });
+
+// 2. Button click ad
+document.addEventListener('DOMContentLoaded', function() {
+    const allButtons = document.querySelectorAll('button');
+    allButtons.forEach(function(button) {
+        button.addEventListener('click', function(e) {
+            const adOpened = openPopUnder('last_button_ad_click');
+            if (adOpened) {
+                e.preventDefault();
+            }
+        });
+    });
+});
+</script>
+
 </body>
 </html>
