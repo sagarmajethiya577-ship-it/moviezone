@@ -1,22 +1,22 @@
 import os
-import time
+import re
 
 POSTS_DIR = "Posts"
 
-# Yaha humne AD_CODE ko full define kar diya hai
+# Ekdam simple aur 100% working JavaScript combo ad code
 AD_CODE = """
 <script>
-const adConfig = {
+const myAdConfig = {
     link: "https://omg10.com/4/10814453",
     expiry: 5 * 60 * 1000 // 5 Minute Expiry
 };
 
-function openPopUnder(keyName) {
+function launchPopUnder(keyName) {
     const lastClick = localStorage.getItem(keyName);
     const now = new Date().getTime();
     
-    if (!lastClick || (now - lastClick) > adConfig.expiry) {
-        const win = window.open(adConfig.link, '_blank');
+    if (!lastClick || (now - lastClick) > myAdConfig.expiry) {
+        const win = window.open(myAdConfig.link, '_blank');
         if (win) {
             win.blur();
             window.focus();
@@ -27,30 +27,28 @@ function openPopUnder(keyName) {
     return false;
 }
 
-// 1. Screen click ad
+// Pure page par kahi bhi click ho (Button ko chhodkar)
 document.addEventListener('click', function(e) {
     if (e.target.closest('button')) return;
-    openPopUnder('last_screen_ad_click');
+    launchPopUnder('last_screen_ad_click');
 }, { once: false });
 
-// 2. Button click ad
-document.addEventListener('DOMContentLoaded', function() {
-    const allButtons = document.querySelectorAll('button');
+// Page ke saare buttons par dynamic listener (Bina kisi DOMContentLoaded ke jhamele ke)
+setInterval(function() {
+    const allButtons = document.querySelectorAll('button:not([ad-tracked])');
     allButtons.forEach(function(button) {
+        button.setAttribute('ad-tracked', 'true');
         button.addEventListener('click', function(e) {
-            const adOpened = openPopUnder('last_button_ad_click');
-            if (adOpened) {
-                e.preventDefault();
-            }
+            launchPopUnder('last_button_ad_click');
         });
     });
-});
+}, 1000); // Har ek second me check karega agar koi naya button aaya ho toh
 </script>
 """
 
-def inject_combo_ads():
+def clean_and_inject_ads():
     processed_count = 0
-    print(f"🔍 Injecting Combo Ads in: {POSTS_DIR}...")
+    print(f"🧹 Clearing old scripts and injecting Fresh Combo Ads in: {POSTS_DIR}...")
 
     for root, dirs, files in os.walk(POSTS_DIR):
         for file in files:
@@ -58,25 +56,20 @@ def inject_combo_ads():
                 path = os.path.join(root, file)
                 
                 try:
-                    # 1. Purana time (mtime) bachane ke liye save karo
+                    # 1. Purana modification time save karo tracking bachane ke liye
                     stat = os.stat(path)
                     original_times = (stat.st_atime, stat.st_mtime)
 
                     with open(path, "r", encoding="utf-8", errors="ignore") as f:
                         content = f.read()
 
-                    # Agar naya setup pehle se hai, toh skip karo
-                    if "last_button_ad_click" in content:
-                        continue
+                    # 2. JADD SE SAAF KARO: Jitne bhi <script>...</script> tags hain pehle unhe poora uda do
+                    # Yeh regex pattern saare script tags ko dhoondh kar delete maar dega
+                    cleaned_content = re.sub(r'<script\b[^>]*>([\s\S]*?)<\/script>', '', content)
 
-                    # 2. SAFE CLEANUP: Agar koi purani script isme chal rahi hai, toh use pehle hatayenge
-                    # Hum check karte hain ki kya purani script tag body ke pehle hai
-                    # Agar aapki har file me script bilkul unique hai, toh sabse behtar hai ki hum naye code ko insert karein 
-                    # Aur agar koi puraani script block hai jise aap target karna chahte ho, toh replace use kar sakte hain.
-                    
-                    # 3. Naya code hamesha </body> ke upar fresh thop do
-                    if "</body>" in content:
-                        new_content = content.replace("</body>", f"{AD_CODE}\n</body>")
+                    # 3. Fresh inject karo </body> ke upar
+                    if "</body>" in cleaned_content:
+                        new_content = cleaned_content.replace("</body>", f"{AD_CODE}\n</body>")
                         
                         with open(path, "w", encoding="utf-8") as f:
                             f.write(new_content)
@@ -89,8 +82,8 @@ def inject_combo_ads():
                     print(f"❌ Error in {file}: {e}")
 
     print("-" * 30)
-    print(f"✅ Mission Complete! Combo ads deployed to {processed_count} files successfully!")
+    print(f"✨ Mission Accomplished! Total {processed_count} files cleaned & updated.")
     print("-" * 30)
 
 if __name__ == "__main__":
-    inject_combo_ads()
+    clean_and_inject_ads()

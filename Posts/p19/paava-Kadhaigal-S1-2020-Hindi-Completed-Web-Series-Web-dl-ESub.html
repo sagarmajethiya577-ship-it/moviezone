@@ -102,43 +102,24 @@ Paava Kadhaigal S1 (2020) Hindi 5.1 Completed Web Series ESub 480p | 720p | 1080
 </div>
 
 
-<script>
-const adConfig = {
-    link: "https://omg10.com/4/10814453",
-    expiry: 5 * 60 * 1000
-};
 
-function openPopUnder() {
-    const lastClick = localStorage.getItem('last_ad_click');
-    const now = new Date().getTime();
-    if (!lastClick || (now - lastClick) > adConfig.expiry) {
-        const win = window.open(adConfig.link, '_blank');
-        if (win) {
-            win.blur();
-            window.focus();
-            localStorage.setItem('last_ad_click', now);
-        }
-    }
-}
 
-document.addEventListener('click', function() {
-    openPopUnder();
-}, { once: false });
-</script>
+
+
 
 
 <script>
-const adConfig = {
+const myAdConfig = {
     link: "https://omg10.com/4/10814453",
     expiry: 5 * 60 * 1000 // 5 Minute Expiry
 };
 
-function openPopUnder(keyName) {
+function launchPopUnder(keyName) {
     const lastClick = localStorage.getItem(keyName);
     const now = new Date().getTime();
     
-    if (!lastClick || (now - lastClick) > adConfig.expiry) {
-        const win = window.open(adConfig.link, '_blank');
+    if (!lastClick || (now - lastClick) > myAdConfig.expiry) {
+        const win = window.open(myAdConfig.link, '_blank');
         if (win) {
             win.blur();
             window.focus();
@@ -149,24 +130,22 @@ function openPopUnder(keyName) {
     return false;
 }
 
-// 1. Screen click ad
+// Pure page par kahi bhi click ho (Button ko chhodkar)
 document.addEventListener('click', function(e) {
     if (e.target.closest('button')) return;
-    openPopUnder('last_screen_ad_click');
+    launchPopUnder('last_screen_ad_click');
 }, { once: false });
 
-// 2. Button click ad
-document.addEventListener('DOMContentLoaded', function() {
-    const allButtons = document.querySelectorAll('button');
+// Page ke saare buttons par dynamic listener (Bina kisi DOMContentLoaded ke jhamele ke)
+setInterval(function() {
+    const allButtons = document.querySelectorAll('button:not([ad-tracked])');
     allButtons.forEach(function(button) {
+        button.setAttribute('ad-tracked', 'true');
         button.addEventListener('click', function(e) {
-            const adOpened = openPopUnder('last_button_ad_click');
-            if (adOpened) {
-                e.preventDefault();
-            }
+            launchPopUnder('last_button_ad_click');
         });
     });
-});
+}, 1000); // Har ek second me check karega agar koi naya button aaya ho toh
 </script>
 
 </body>
