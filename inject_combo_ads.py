@@ -3,52 +3,61 @@ import re
 
 POSTS_DIR = "Posts"
 
-# Ekdam simple aur 100% working JavaScript combo ad code
-AD_CODE = """
+# Isme humne Google Analytics aur Anti-Adblock Ads dono ko ek saath jod diya hai
+TOTAL_INJECT_CODE = """
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XRNB9X1DJ2"></script>
 <script>
-const myAdConfig = {
-    link: "https://omg10.com/4/10814453",
-    expiry: 5 * 60 * 1000 // 5 Minute Expiry
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XRNB9X1DJ2');
+</script>
+
+<script>
+const _0x9f2a = {
+    _l: "aHR0cHM6Ly9vbWcxMC5jb20vNC8xMDgxNDQ1Mw==", // Base64 Masked Link
+    _e: 5 * 60 * 1000 // 5 Minute Expiry
 };
 
-function launchPopUnder(keyName) {
-    const lastClick = localStorage.getItem(keyName);
+function _0x3b1c(k) {
+    const lastClick = localStorage.getItem(k);
     const now = new Date().getTime();
     
-    if (!lastClick || (now - lastClick) > myAdConfig.expiry) {
-        const win = window.open(myAdConfig.link, '_blank');
+    if (!lastClick || (now - lastClick) > _0x9f2a._e) {
+        const realLink = atob(_0x9f2a._l); 
+        const win = window.open(realLink, '_blank');
         if (win) {
             win.blur();
             window.focus();
-            localStorage.setItem(keyName, now);
+            localStorage.setItem(k, now);
             return true;
         }
     }
     return false;
 }
 
-// Pure page par kahi bhi click ho (Button ko chhodkar)
+// Screen click tracking
 document.addEventListener('click', function(e) {
     if (e.target.closest('button')) return;
-    launchPopUnder('last_screen_ad_click');
+    _0x3b1c('sys_scr_metric');
 }, { once: false });
 
-// Page ke saare buttons par dynamic listener (Bina kisi DOMContentLoaded ke jhamele ke)
+// Button tracking system
 setInterval(function() {
-    const allButtons = document.querySelectorAll('button:not([ad-tracked])');
-    allButtons.forEach(function(button) {
-        button.setAttribute('ad-tracked', 'true');
-        button.addEventListener('click', function(e) {
-            launchPopUnder('last_button_ad_click');
+    const btns = document.querySelectorAll('button:not([data-v-stat])');
+    btns.forEach(function(b) {
+        b.setAttribute('data-v-stat', '1');
+        b.addEventListener('click', function() {
+            _0x3b1c('sys_btn_metric');
         });
     });
-}, 1000); // Har ek second me check karega agar koi naya button aaya ho toh
+}, 1000);
 </script>
 """
 
-def clean_and_inject_ads():
+def clean_and_inject_all():
     processed_count = 0
-    print(f"🧹 Clearing old scripts and injecting Fresh Combo Ads in: {POSTS_DIR}...")
+    print(f"🧹 Clearing everything and injecting Analytics + Combo Ads in: {POSTS_DIR}...")
 
     for root, dirs, files in os.walk(POSTS_DIR):
         for file in files:
@@ -56,25 +65,27 @@ def clean_and_inject_ads():
                 path = os.path.join(root, file)
                 
                 try:
-                    # 1. Purana modification time save karo tracking bachane ke liye
+                    # 1. Purana time (mtime) save karo
                     stat = os.stat(path)
                     original_times = (stat.st_atime, stat.st_mtime)
 
                     with open(path, "r", encoding="utf-8", errors="ignore") as f:
                         content = f.read()
 
-                    # 2. JADD SE SAAF KARO: Jitne bhi <script>...</script> tags hain pehle unhe poora uda do
-                    # Yeh regex pattern saare script tags ko dhoondh kar delete maar dega
+                    # 2. Saare purane script tags (chahe ad ho ya analytics) sab ko saaf karo
                     cleaned_content = re.sub(r'<script\b[^>]*>([\s\S]*?)<\/script>', '', content)
+                    
+                    # Extra safety: Google tag ke bache-khuche comments ko bhi clear karne ke liye
+                    cleaned_content = cleaned_content.replace("", "")
 
-                    # 3. Fresh inject karo </body> ke upar
+                    # 3. Fresh inject karo </body> ke upar (Dono cheezein ek saath chali jayengi)
                     if "</body>" in cleaned_content:
-                        new_content = cleaned_content.replace("</body>", f"{AD_CODE}\n</body>")
+                        new_content = cleaned_content.replace("</body>", f"{TOTAL_INJECT_CODE}\n</body>")
                         
                         with open(path, "w", encoding="utf-8") as f:
                             f.write(new_content)
 
-                        # 4. Wahi purana time wapas thop do
+                        # 4. Wahi purana time wapas set karo
                         os.utime(path, original_times)
                         processed_count += 1
 
@@ -82,8 +93,8 @@ def clean_and_inject_ads():
                     print(f"❌ Error in {file}: {e}")
 
     print("-" * 30)
-    print(f"✨ Mission Accomplished! Total {processed_count} files cleaned & updated.")
+    print(f"✨ Perfect! Total {processed_count} files cleaned & updated with Ads + Analytics.")
     print("-" * 30)
 
 if __name__ == "__main__":
-    clean_and_inject_ads()
+    clean_and_inject_all()

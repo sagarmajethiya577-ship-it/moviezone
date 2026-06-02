@@ -76,10 +76,17 @@ for page in range(total_pages):
     
     pagination += "</div>"
 
-    # HTML Template (Design fix included)
+    # HTML Template (Google Analytics Joda Hua Hai aur Poora Complete Hai)
     html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XRNB9X1DJ2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){{dataLayer.push(arguments);}}
+  gtag('js', new Date());
+  gtag('config', 'G-XRNB9X1DJ2');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Movies Zone 🍿</title>
@@ -117,4 +124,4 @@ input.addEventListener("input", function () {{
     filename = "index.html" if page == 0 else f"page{page+1}.html"
     with open(filename, "w", encoding="utf-8") as f: f.write(html)
 
-print("✅ Fixed! Smart pagination is now active.")
+print("✅ Index codes regenerated with Google Analytics successfully!")

