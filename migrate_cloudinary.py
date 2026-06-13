@@ -7,7 +7,7 @@ import requests
 # CONFIGURATION
 # =========================================================
 POSTS_BASE_DIR = os.path.expanduser("~/moviezone/Posts")
-IMGBB_API_KEY = "85fca1591e03f0ea1888aa7256b07efb"
+IMGBB_API_KEY = "f32e74f0652698d7db9b3e4c06f8b87e"
 TEMP_IMG_PATH = "/sdcard/temp_migration_img.jpg"
 
 HEADERS = {
