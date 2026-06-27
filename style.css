@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Oswald:wght@700;900&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -6,36 +8,110 @@ body {
   margin: 0;
   background: #0f0f0f;
   color: #ffffff;
-  font-family: Arial, sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
   line-height: 1.7;
 }
 
-/* ================= HEADER ================= */
+/* ================= PREMIUM HEADER & SEARCH ================= */
 
 .site-header {
+  background: linear-gradient(180deg, #180828 0%, #090214 100%);
+  padding: 25px 15px;
+  border-bottom: 2px solid #281442;
   text-align: center;
-  padding: 20px 10px;
-  background: #000;
-  border-bottom: 1px solid #222;
+}
+
+.header-content {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
 }
 
 .site-title {
-  display: inline-block;
   text-decoration: none;
-  font-size: 28px;
-  font-weight: bold;
-  color: #00ffd5;
-  letter-spacing: 1px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 38px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+  text-transform: uppercase;
+  background: linear-gradient(45deg, #ff007f, #00ffd5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.6));
+  display: inline-block;
+  line-height: 1.1;
+  font-style: italic;
+  
+  /* YAHAN FIX KIYA HAI: 'E' ko katne se rokne ke liye right side me space diya */
+  padding-right: 8px;
+  font-display: swap;
 }
 
 .site-title:hover {
-  color: #00c9aa;
+  opacity: 0.9;
 }
 
-.tagline {
+/* Search Container Block */
+.search-wrapper {
+  display: flex;
+  width: 100%;
+  background: #1e1233;
+  border-radius: 30px;
+  overflow: hidden;
+  border: 1px solid #443069;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
   margin-top: 5px;
-  color: #aaa;
+}
+
+#searchInput {
+  flex: 1;
+  padding: 14px 20px;
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 15px;
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#searchInput::placeholder {
+  color: #a594c4;
+}
+
+#searchBtn {
+  background: #e21265;
+  color: #ffffff;
+  border: none;
+  padding: 0 25px;
   font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  transition: background 0.2s ease;
+}
+
+#searchBtn:hover {
+  background: #c20f54;
+}
+
+/* Responsive adjust for smaller mobiles */
+@media (max-width: 400px) {
+  .site-title {
+    font-size: 30px;
+  }
+  #searchInput {
+    padding: 12px 15px;
+    font-size: 13px;
+  }
+  #searchBtn {
+    padding: 0 15px;
+    font-size: 12px;
+  }
 }
 
 /* ================= HOME PAGE ================= */
@@ -69,9 +145,10 @@ body {
 }
 
 .post-card h2 {
-  font-size: 15px;
+  font-size: 14px;
   padding: 10px;
   margin: 0;
+  font-weight: 700;
 }
 
 /* ================= PAGINATION ================= */
@@ -145,28 +222,3 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-/* ================= SEARCH BOX ================= */
-
-.search-box {
-    text-align: center;
-    margin: 20px 0;
-}
-
-#searchInput {
-    width: 80%;
-    max-width: 500px;
-    padding: 12px 20px;
-    border-radius: 25px;
-    border: 2px solid #ff4757; /* Eye-catching color */
-    background: #2f3542;
-    color: white;
-    font-size: 16px;
-    outline: none;
-    transition: 0.3s;
-}
-
-#searchInput:focus {
-    box-shadow: 0 0 10px #ff4757;
-    width: 85%;
-}
-
