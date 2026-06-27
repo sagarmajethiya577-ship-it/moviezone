@@ -49,7 +49,7 @@ body {
   /* YAHAN FIX KIYA HAI: 'E' ko katne se rokne ke liye right side me space diya */
   padding-right: 8px;
   font-display: swap;
-}
+}}
 
 .site-title:hover {
   opacity: 0.9;
