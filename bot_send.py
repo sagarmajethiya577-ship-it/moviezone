@@ -1,6 +1,8 @@
 import os
 import asyncio
 import requests
+import io
+from PIL import Image
 from bs4 import BeautifulSoup
 from telethon import TelegramClient
 
@@ -59,31 +61,27 @@ async def main():
         img_url = img_tag.get("src")
         title = h1_tag.text.strip()
 
-        # Download image with verification and correct format
+        # Download and Force-Convert Image to JPG
         try:
             response = requests.get(img_url, timeout=10)
             if response.status_code != 200:
                 print(f"❌ Broken Image Link (Skipping): {file_name}")
                 continue
             
-            # Check actual image format (webp, png, or jpg)
-            content_type = response.headers.get('content-type', '')
-            if 'webp' in content_type:
-                ext = '.webp'
-            elif 'png' in content_type:
-                ext = '.png'
-            else:
-                ext = '.jpg'
-                
+            # Use Pillow to read the image data directly from memory
             img_data = response.content
-            img_file = f"temp{ext}" # Save with correct extension
+            img = Image.open(io.BytesIO(img_data))
+            
+            # Convert to RGB if it has transparency (like some WEBP/PNGs) to avoid saving errors
+            if img.mode in ("RGBA", "P"):
+                img = img.convert("RGB")
+                
+            img_file = "temp.jpg" # ALWAYS save as JPG
+            img.save(img_file, "JPEG")
 
         except Exception as e:
-            print(f"❌ Image download failed for {file_name}: {e}")
+            print(f"❌ Image download or conversion failed for {file_name}: {e}")
             continue
-
-        with open(img_file, "wb") as img:
-            img.write(img_data)
 
         final_link = BASE_URL + file_name
         caption = f"{title}\n\n{final_link}"
@@ -105,7 +103,6 @@ async def main():
                 f.write(file_name + "\n")
 
         except Exception as e:
-            # Agar image me sach me koi problem hai, to document nahi bhejega, bas skip kar dega
             print(f"⚠️ Ye image Telegram support nahi kar raha, skipping: {title} | Error: {e}")
 
         # Cleanup
