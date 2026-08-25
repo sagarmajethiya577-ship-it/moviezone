@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="https://bleatbehind.com/77/19/55/7719558a2ddf75875325865ff105e8f4.js"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XRNB9X1DJ2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XRNB9X1DJ2');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movies Zone</title>
+<link rel="stylesheet" href="style.css">
+<style>
+    .pagination { display: flex; justify-content: center; align-items: center; gap: 5px; margin: 30px 10px; flex-wrap: wrap; }
+    .page-btn, .page-num { padding: 8px 12px; border: 1px solid #00ff88; color: #00ff88; text-decoration: none; border-radius: 4px; font-size: 14px; min-width: 35px; text-align: center; }
+    .page-num.active { background: #00ff88; color: #000; font-weight: bold; border-color: #00ff88; }
+    .dots { color: #00ff88; padding: 0 5px; }
+    .page-btn:hover, .page-num:hover:not(.active) { background: rgba(0, 255, 136, 0.1); }
+    @media (max-width: 600px) { .page-btn { font-size: 12px; padding: 6px 10px; } }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-content">
+        <a href="/" class="site-title">Movies Zone</a>
+        <div class="search-wrapper">
+            <input type="text" id="searchInput" placeholder="Search Movies or WEB-Series here">
+            <button id="searchBtn">SEARCH</button>
+        </div>
+    </div>
+</header>
+
+<main class="home-container" id="postList"><a class="post-card" href="Posts/p1/amazon-prime-laakhon-mein-ek-hindi-series-480p-720p-hdrip.html"><img src="https://rogmovies.pics/wp-content/uploads/2021/10/Laakhon-Mein-Ek.jpg"><h2>Laakhon Mein Ek (Season 1-2) Hindi Complete Amazon Prime WEB Series 480p [600MB] | 720p [2GB] HDRip</h2></a><a class="post-card" href="Posts/p1/47-meters-down-uncaged-2019-dual-audio-hindi-english-bluray.html"><img src="https://vegamovies.cologne/wp-content/uploads/2020/06/47-Meters-Down-poster.png"><h2>47 Meters Down: Uncaged (2019) Dual Audio {Hindi-English} 480p [400MB] | 720p [900MB] | 1080p [2.3GB]</h2></a></main>
+<div class="pagination"><a href="page99.html" class="page-btn">← Previous</a><a href="index.html" class="page-num ">1</a><span class="dots">...</span><a href="page97.html" class="page-num ">97</a><a href="page98.html" class="page-num ">98</a><a href="page99.html" class="page-num ">99</a><a href="page100.html" class="page-num active">100</a></div>
+<footer class="site-footer">© 2026 Movies Zone | All Rights Reserved</footer>
+
+<script>
+let movieData = [];
+async function loadSearchData() { 
+    try {
+        const res = await fetch('search_data.json'); 
+        movieData = await res.json(); 
+    } catch(e) { console.error("Error loading search data", e); }
+}
+loadSearchData();
+
+const input = document.getElementById("searchInput");
+const searchBtn = document.getElementById("searchBtn");
+const postList = document.getElementById("postList");
+const originalContent = postList.innerHTML;
+
+function performSearch() {
+    const val = input.value.toLowerCase().trim();
+    
+    if (val.length < 2) { 
+        postList.innerHTML = originalContent; 
+        return; 
+    }
+    
+    const searchWords = val.split(/\s+/); 
+    const res = movieData.filter(m => {
+        const titleLower = m.t.toLowerCase();
+        return searchWords.every(word => titleLower.includes(word));
+    });
+    
+    if (res.length > 0) { 
+        postList.innerHTML = res.map(m => `<a class="post-card" href="${m.u}"><img src="${m.i}"><h2>${m.t}</h2></a>`).join(""); 
+    } else { 
+        postList.innerHTML = "<p style='color:white; text-align:center; width:100%; margin: 50px 0;'>No movies found!</p>"; 
+    }
+}
+
+input.addEventListener("input", performSearch);
+searchBtn.addEventListener("click", performSearch);
+</script>
+</body></html>
