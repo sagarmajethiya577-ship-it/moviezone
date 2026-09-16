@@ -243,7 +243,9 @@
     
     <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
     <div id="originalContent" style="width:100%;">
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgra7OSCxB2qLw0CjhFYadnAl7nMPASTbhCUWlqi0vEoRy2xawOpYFNCzEV7hwEeSieTFPcLu5KIHt5y1vjns3HSJ6-Zg6_LJugMYVSf97q216dbWoVLjgS8QZrbL8n0n7-32vQKq1RwI3llqpY2Sm0NT1_b02ZYGaLAAhITdT5rbfZiiO3GiTW9vJnfyUP/s661/1282300.jpg" style="max-width:100%;height:auto;"/>
+        <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
+<div id="originalContent" style="width:100%;">
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgra7OSCxB2qLw0CjhFYadnAl7nMPASTbhCUWlqi0vEoRy2xawOpYFNCzEV7hwEeSieTFPcLu5KIHt5y1vjns3HSJ6-Zg6_LJugMYVSf97q216dbWoVLjgS8QZrbL8n0n7-32vQKq1RwI3llqpY2Sm0NT1_b02ZYGaLAAhITdT5rbfZiiO3GiTW9vJnfyUP/s661/1282300.jpg" style="max-width:100%;height:auto;"/>
 <h1>
  Bad Boys for Life (2020) Dual Audio {Hindi-English} 480p [400MB] | 720p [1GB] | 1080p [2GB]
 </h1>
@@ -477,6 +479,7 @@
   Thank you for visit❤️
  </span>
 </h2>
+</div>
     </div>
 </main>
 
@@ -530,7 +533,7 @@ function performSearch() {
         return searchWords.every(word => titleLower.includes(word));
     });
     
-    originalContent.style.display = "none";
+    originalContent.style.display="none";
     if (paginationWrapper) paginationWrapper.style.display = "none";
     searchResults.style.display = "grid";
     
@@ -543,4 +546,4 @@ function performSearch() {
 if(input) input.addEventListener("input", performSearch);
 if(searchBtn) searchBtn.addEventListener("click", performSearch);
 </script>
-</body></html>
+</html>

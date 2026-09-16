@@ -243,7 +243,9 @@
     
     <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
     <div id="originalContent" style="width:100%;">
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhEF0obAO2NKZkbyrGI6dV3DrUKtcFV8ol989gU3piS1FWvzYvdDanEHOPJyIZKWZXUJMPD4u6Lh2twbYF6zQp-x7LrshliHnd-2mVtITca8RksMAiaSKNX5G0873AJ35KCi1ehpSVY6G1WIEORWdB7EfdCp5Y5MZZ-p1bEcNv6dmCH6CJ9t2kqqttIjjo/s3000/1296993.gif" style="display: block; height: auto; margin: 0px auto; max-width: 100%;"/>
+        <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
+<div id="originalContent" style="width:100%;">
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhEF0obAO2NKZkbyrGI6dV3DrUKtcFV8ol989gU3piS1FWvzYvdDanEHOPJyIZKWZXUJMPD4u6Lh2twbYF6zQp-x7LrshliHnd-2mVtITca8RksMAiaSKNX5G0873AJ35KCi1ehpSVY6G1WIEORWdB7EfdCp5Y5MZZ-p1bEcNv6dmCH6CJ9t2kqqttIjjo/s3000/1296993.gif" style="display: block; height: auto; margin: 0px auto; max-width: 100%;"/>
 <h1 style="font-family: sans-serif; margin: 0px; padding: 15px 10px 5px; text-align: left;">
 Joe Pickett (Season 1 – 2) Dual Audio {Hindi + English} Completed Web Series ESub 480p | 720p | 1080p</h1>
 <div class="entry-content" style="font-family: sans-serif; font-size: 17px; line-height: 1.6; padding: 10px;">
@@ -307,6 +309,7 @@ Follows a dedicated game warden and his family navigating life in a small rural 
 </div>
 </h2>
 <h2 style="text-align: center;"><span style="font-size: large;">Thank you for visit.❤️</span></h2>
+</div>
     </div>
 </main>
 
@@ -360,7 +363,7 @@ function performSearch() {
         return searchWords.every(word => titleLower.includes(word));
     });
     
-    originalContent.style.display = "none";
+    originalContent.style.display="none";
     if (paginationWrapper) paginationWrapper.style.display = "none";
     searchResults.style.display = "grid";
     
@@ -373,4 +376,4 @@ function performSearch() {
 if(input) input.addEventListener("input", performSearch);
 if(searchBtn) searchBtn.addEventListener("click", performSearch);
 </script>
-</body></html>
+</html>

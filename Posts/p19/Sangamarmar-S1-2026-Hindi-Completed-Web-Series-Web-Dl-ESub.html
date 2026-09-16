@@ -243,7 +243,9 @@
     
     <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
     <div id="originalContent" style="width:100%;">
-        <img src="https://i.ibb.co/KpTY83zw/2e59bffa81cf.jpg" style="display: block; height: auto; margin: 0px auto; max-width: 100%;"/>
+        <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
+<div id="originalContent" style="width:100%;">
+<img src="https://i.ibb.co/KpTY83zw/2e59bffa81cf.jpg" style="display: block; height: auto; margin: 0px auto; max-width: 100%;"/>
 <h1 style="font-family: sans-serif; margin: 0px; padding: 15px 10px 5px; text-align: left;">
 Sangamarmar S1 (2026) Hindi 5.1 WEB Series Complete ESub 480p [750MB] | 720p [1.3GB] | 1080p [3.5GB] – WEB-DL
 </h1>
@@ -340,6 +342,7 @@ This movie is based on <span style="color: orange;"><strong>Drama, Romance</stro
 </div>
 </h2>
 <h2 style="text-align: center;"><span style="font-size: large;">Thank you for visit.❤️</span></h2>
+</div>
     </div>
 </main>
 
@@ -393,7 +396,7 @@ function performSearch() {
         return searchWords.every(word => titleLower.includes(word));
     });
     
-    originalContent.style.display = "none";
+    originalContent.style.display="none";
     if (paginationWrapper) paginationWrapper.style.display = "none";
     searchResults.style.display = "grid";
     
@@ -406,4 +409,4 @@ function performSearch() {
 if(input) input.addEventListener("input", performSearch);
 if(searchBtn) searchBtn.addEventListener("click", performSearch);
 </script>
-</body></html>
+</html>

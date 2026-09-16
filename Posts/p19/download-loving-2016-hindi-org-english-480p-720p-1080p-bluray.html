@@ -243,7 +243,9 @@
     
     <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
     <div id="originalContent" style="width:100%;">
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjaXcBEpvEX_tHGT7qWbWYB0Hy2YaIqkQTRavs7OkeqsYXDmVMr_ub6DdcdAfnW7zSDFNKODM7VRKCbxB1gLJNR9hu0tp92o2cqQyMewJCXesHUrbzCj7BSMBdKjur-a5mm9gTsqMqVctFXeNZ2jxZ280on4Y4QOQAn2PLNDWayAjGCo91LNiRFJf-1-yY/s450/1306027.jpg" style="max-width:100%; height:auto; display:block; margin:0 auto;"/>
+        <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
+<div id="originalContent" style="width:100%;">
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjaXcBEpvEX_tHGT7qWbWYB0Hy2YaIqkQTRavs7OkeqsYXDmVMr_ub6DdcdAfnW7zSDFNKODM7VRKCbxB1gLJNR9hu0tp92o2cqQyMewJCXesHUrbzCj7BSMBdKjur-a5mm9gTsqMqVctFXeNZ2jxZ280on4Y4QOQAn2PLNDWayAjGCo91LNiRFJf-1-yY/s450/1306027.jpg" style="max-width:100%; height:auto; display:block; margin:0 auto;"/>
 <h1 style="text-align: left; font-family: sans-serif; padding: 15px 10px 5px 10px; margin: 0;">
 Loving (2016) Dual Audio {Hindi-English} BluRay 480p [400MB] | 720p [1.2GB] | 1080p [2GB]
 </h1>
@@ -310,6 +312,7 @@ The story of Richard and Mildred Loving, an interracial couple whose marriage le
 </div>
 </h2>
 <h2 style="text-align: center;"><span style="font-size: large;">Thank you for visit❤️</span></h2>
+</div>
     </div>
 </main>
 
@@ -363,7 +366,7 @@ function performSearch() {
         return searchWords.every(word => titleLower.includes(word));
     });
     
-    originalContent.style.display = "none";
+    originalContent.style.display="none";
     if (paginationWrapper) paginationWrapper.style.display = "none";
     searchResults.style.display = "grid";
     
@@ -376,4 +379,4 @@ function performSearch() {
 if(input) input.addEventListener("input", performSearch);
 if(searchBtn) searchBtn.addEventListener("click", performSearch);
 </script>
-</body></html>
+</html>

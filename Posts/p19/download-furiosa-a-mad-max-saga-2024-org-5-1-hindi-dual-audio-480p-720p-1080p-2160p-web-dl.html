@@ -243,7 +243,9 @@
     
     <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
     <div id="originalContent" style="width:100%;">
-        <img src="https://vegamovies.cologne/wp-content/uploads/2024/06/Furiosa-A-Mad-Max-Saga-2024-in-Hindi-Dual-Audio-Vegamovies.png" style="max-width:100%;height:auto;"/>
+        <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
+<div id="originalContent" style="width:100%;">
+<img src="https://vegamovies.cologne/wp-content/uploads/2024/06/Furiosa-A-Mad-Max-Saga-2024-in-Hindi-Dual-Audio-Vegamovies.png" style="max-width:100%;height:auto;"/>
 <h1>
  Furiosa: A Mad Max Saga (2024) WEB-DL Dual Audio [Hindi ORG 5.1 – English ORG 5.1] 480p [690MB] | 720p [1.6GB] | 1080p [3.5GB] &amp; 2160p [13.5GB] 4K SDR
 </h1>
@@ -675,6 +677,7 @@
   Thank you for visit❤️
  </span>
 </h2>
+</div>
     </div>
 </main>
 
@@ -728,7 +731,7 @@ function performSearch() {
         return searchWords.every(word => titleLower.includes(word));
     });
     
-    originalContent.style.display = "none";
+    originalContent.style.display="none";
     if (paginationWrapper) paginationWrapper.style.display = "none";
     searchResults.style.display = "grid";
     
@@ -741,4 +744,4 @@ function performSearch() {
 if(input) input.addEventListener("input", performSearch);
 if(searchBtn) searchBtn.addEventListener("click", performSearch);
 </script>
-</body></html>
+</html>

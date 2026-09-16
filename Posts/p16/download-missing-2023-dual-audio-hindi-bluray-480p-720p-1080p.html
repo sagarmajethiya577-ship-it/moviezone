@@ -243,7 +243,9 @@
     
     <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
     <div id="originalContent" style="width:100%;">
-        <img src="https://vegamovies.cologne/wp-content/uploads/2023/03/Missing-2023-Vega-Poster.jpg" style="max-width:100%;height:auto;"/>
+        <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
+<div id="originalContent" style="width:100%;">
+<img src="https://vegamovies.cologne/wp-content/uploads/2023/03/Missing-2023-Vega-Poster.jpg" style="max-width:100%;height:auto;"/>
 <h1>
  Missing (2023) BluRay Dual Audio ORG. {Hindi DD 5.1 – English} 480p [400MB] | 720p [950MB] | 1080p [2.3GB]
 </h1>
@@ -631,6 +633,7 @@
   Thank you for visit❤️
  </span>
 </h2>
+</div>
     </div>
 </main>
 
@@ -684,7 +687,7 @@ function performSearch() {
         return searchWords.every(word => titleLower.includes(word));
     });
     
-    originalContent.style.display = "none";
+    originalContent.style.display="none";
     if (paginationWrapper) paginationWrapper.style.display = "none";
     searchResults.style.display = "grid";
     
@@ -697,4 +700,4 @@ function performSearch() {
 if(input) input.addEventListener("input", performSearch);
 if(searchBtn) searchBtn.addEventListener("click", performSearch);
 </script>
-</body></html>
+</html>

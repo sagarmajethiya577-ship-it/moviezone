@@ -243,7 +243,9 @@
     
     <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
     <div id="originalContent" style="width:100%;">
-        <img src="https://vegamovies.cologne/wp-content/uploads/2024/04/Dune-Part-Two-2024-ORG-Vegamovies-poster.jpg" style="max-width:100%;height:auto;"/>
+        <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
+<div id="originalContent" style="width:100%;">
+<img src="https://vegamovies.cologne/wp-content/uploads/2024/04/Dune-Part-Two-2024-ORG-Vegamovies-poster.jpg" style="max-width:100%;height:auto;"/>
 <h1>
  Dune: Part Two (2024) AMZN WEB-DL Dual Audio {Hindi Dubbed (ORG 5.1) + English} 480p [590MB] | 720p [1.5GB] | 1080p [3.5GB] | 2160p [19GB] 4K SDR – Full Movie
 </h1>
@@ -693,6 +695,7 @@
   Thank you for visit❤️
  </span>
 </h2>
+</div>
     </div>
 </main>
 
@@ -746,7 +749,7 @@ function performSearch() {
         return searchWords.every(word => titleLower.includes(word));
     });
     
-    originalContent.style.display = "none";
+    originalContent.style.display="none";
     if (paginationWrapper) paginationWrapper.style.display = "none";
     searchResults.style.display = "grid";
     
@@ -759,4 +762,4 @@ function performSearch() {
 if(input) input.addEventListener("input", performSearch);
 if(searchBtn) searchBtn.addEventListener("click", performSearch);
 </script>
-</body></html>
+</html>

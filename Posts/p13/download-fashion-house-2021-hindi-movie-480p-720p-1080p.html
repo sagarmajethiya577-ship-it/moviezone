@@ -243,7 +243,9 @@
     
     <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
     <div id="originalContent" style="width:100%;">
-        <img src="https://imageflix.cam/images/2022/06/29/754ee99f05728faba3bba10dac55d91a.th.png" style="max-width:100%;height:auto;"/>
+        <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
+<div id="originalContent" style="width:100%;">
+<img src="https://imageflix.cam/images/2022/06/29/754ee99f05728faba3bba10dac55d91a.th.png" style="max-width:100%;height:auto;"/>
 <h1>
  Fashion House (2021) Hindi Full Movie WEB-DL 480p [350MB] | 720p [870MB] | 1080p [1.8GB]
 </h1>
@@ -517,6 +519,7 @@
   Thank you for visit❤️
  </span>
 </h2>
+</div>
     </div>
 </main>
 
@@ -570,7 +573,7 @@ function performSearch() {
         return searchWords.every(word => titleLower.includes(word));
     });
     
-    originalContent.style.display = "none";
+    originalContent.style.display="none";
     if (paginationWrapper) paginationWrapper.style.display = "none";
     searchResults.style.display = "grid";
     
@@ -583,4 +586,4 @@ function performSearch() {
 if(input) input.addEventListener("input", performSearch);
 if(searchBtn) searchBtn.addEventListener("click", performSearch);
 </script>
-</body></html>
+</html>

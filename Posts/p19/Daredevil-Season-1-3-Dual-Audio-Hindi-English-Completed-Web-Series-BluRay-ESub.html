@@ -243,7 +243,9 @@
     
     <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
     <div id="originalContent" style="width:100%;">
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjmRAcA_psWYz97C8tAHrGKIRc5VFBo-Y7ENzGHmZIdWIxGNAMWmgcgSoE0cAkkOVEvMv2baG3S7irETvP3Q813FLfQheRjUQt1VxNQyLZJN3BhqAHJC5XoRb1OgmqWOTWl20Az0pil4ZzxXByZwN1aafFyd-RH0NZfXBB80bKKFbYuaclmTcv5a2jMNDA/s1500/1305962.gif" style="display: block; height: auto; margin: 0px auto; max-width: 100%;"/>
+        <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
+<div id="originalContent" style="width:100%;">
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjmRAcA_psWYz97C8tAHrGKIRc5VFBo-Y7ENzGHmZIdWIxGNAMWmgcgSoE0cAkkOVEvMv2baG3S7irETvP3Q813FLfQheRjUQt1VxNQyLZJN3BhqAHJC5XoRb1OgmqWOTWl20Az0pil4ZzxXByZwN1aafFyd-RH0NZfXBB80bKKFbYuaclmTcv5a2jMNDA/s1500/1305962.gif" style="display: block; height: auto; margin: 0px auto; max-width: 100%;"/>
 <h1 style="font-family: sans-serif; margin: 0px; padding: 15px 10px 5px; text-align: left;">
 Daredevil (Season 1-3) Dual Audio [Hindi + English] Completed Web Series BluRay ESub 480p | 720p | 1080p
 </h1>
@@ -324,6 +326,7 @@ Matt Murdock, a blind lawyer by day and vigilante by night, fights crime in New 
 </div>
 </h2>
 <h2 style="text-align: center;"><span style="font-size: large;">Thank you for visit❤️</span></h2>
+</div>
     </div>
 </main>
 
@@ -377,7 +380,7 @@ function performSearch() {
         return searchWords.every(word => titleLower.includes(word));
     });
     
-    originalContent.style.display = "none";
+    originalContent.style.display="none";
     if (paginationWrapper) paginationWrapper.style.display = "none";
     searchResults.style.display = "grid";
     
@@ -390,4 +393,4 @@ function performSearch() {
 if(input) input.addEventListener("input", performSearch);
 if(searchBtn) searchBtn.addEventListener("click", performSearch);
 </script>
-</body></html>
+</html>

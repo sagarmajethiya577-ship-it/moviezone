@@ -243,7 +243,9 @@
     
     <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
     <div id="originalContent" style="width:100%;">
-        <img src="https://vegamovies.cologne/wp-content/uploads/2025/02/Attack-on-Titan-2-2025.jpg" style="max-width:100%;height:auto;"/>
+        <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
+<div id="originalContent" style="width:100%;">
+<img src="https://vegamovies.cologne/wp-content/uploads/2025/02/Attack-on-Titan-2-2025.jpg" style="max-width:100%;height:auto;"/>
 <h1>
  Attack on Titan (Season 1 – 4) Complete MulTi Audio {Hindi-English-Japanese} Anime Series WEB Series – 480p | 720p | 1080p WEB-DL
 </h1>
@@ -806,6 +808,7 @@
   Thank you for visit❤️
  </span>
 </h2>
+</div>
     </div>
 </main>
 
@@ -859,7 +862,7 @@ function performSearch() {
         return searchWords.every(word => titleLower.includes(word));
     });
     
-    originalContent.style.display = "none";
+    originalContent.style.display="none";
     if (paginationWrapper) paginationWrapper.style.display = "none";
     searchResults.style.display = "grid";
     
@@ -872,4 +875,4 @@ function performSearch() {
 if(input) input.addEventListener("input", performSearch);
 if(searchBtn) searchBtn.addEventListener("click", performSearch);
 </script>
-</body></html>
+</html>

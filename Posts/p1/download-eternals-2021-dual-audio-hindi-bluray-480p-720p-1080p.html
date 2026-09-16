@@ -243,7 +243,9 @@
     
     <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
     <div id="originalContent" style="width:100%;">
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg3sAWcVfE_A1kspBBvz-1bwBHWvlktoKszx4VG-ennSEJ4A1cdXlJQDEAXLzzjsWiTUvYtyi4uJzOOAvOG1w2TWUEcESRdZw9g7q8sMbNg_AHLhZ57iY0OSx9SjdlbYRN1WRUkoQfIxeXpAb02Na5lrYfTCQTdj1zfZAO9LO6hH1luTpT8y5BwDu3co92Z/s1800/1273177.jpg" style="height: auto; max-width: 100%;"/>
+        <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
+<div id="originalContent" style="width:100%;">
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg3sAWcVfE_A1kspBBvz-1bwBHWvlktoKszx4VG-ennSEJ4A1cdXlJQDEAXLzzjsWiTUvYtyi4uJzOOAvOG1w2TWUEcESRdZw9g7q8sMbNg_AHLhZ57iY0OSx9SjdlbYRN1WRUkoQfIxeXpAb02Na5lrYfTCQTdj1zfZAO9LO6hH1luTpT8y5BwDu3co92Z/s1800/1273177.jpg" style="height: auto; max-width: 100%;"/>
 <h1>
  Marvel Studio’s Eternals (2021) IMAX BluRay Dual Audio {Hindi-English} 480p [500MB] | 720p [1.1GB] | 1080p [3.6GB]
 </h1>
@@ -342,7 +344,6 @@
 </strong>
 <br/>
 <strong>
-
 <p>
 <strong>
    Movie Name:
@@ -499,6 +500,7 @@ Marvel Studio’s “Eternals” – An American Science Fiction Fantasy Superhe
   Thank you for visit❤️
  </span>
 </h2>
+</div>
     </div>
 </main>
 
@@ -552,7 +554,7 @@ function performSearch() {
         return searchWords.every(word => titleLower.includes(word));
     });
     
-    originalContent.style.display = "none";
+    originalContent.style.display="none";
     if (paginationWrapper) paginationWrapper.style.display = "none";
     searchResults.style.display = "grid";
     
@@ -565,4 +567,4 @@ function performSearch() {
 if(input) input.addEventListener("input", performSearch);
 if(searchBtn) searchBtn.addEventListener("click", performSearch);
 </script>
-</body></html>
+</html>

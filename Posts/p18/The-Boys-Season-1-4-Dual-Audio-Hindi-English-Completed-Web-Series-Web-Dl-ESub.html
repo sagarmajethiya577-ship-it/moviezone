@@ -243,7 +243,9 @@
     
     <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
     <div id="originalContent" style="width:100%;">
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg3Ww5EWWIKt_3RyihOPF2k-nxfB694JqLjW6NFAoPE6lrnorMbnEdLwDxJcSZjlBDRXESdWW4lXeyX4KokqggQjFcecHdB399rc9IE935_WC0dS3WnSplZvv2JDSaiTHnqoS4RAnJGvJc5WKpqqjo7I2ZE_83_BwutR58GciRV6BaOhxEK_woANhoqey0/s1600/1311122.gif" style="display: block; height: auto; margin: 0px auto; max-width: 100%;"/>
+        <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
+<div id="originalContent" style="width:100%;">
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg3Ww5EWWIKt_3RyihOPF2k-nxfB694JqLjW6NFAoPE6lrnorMbnEdLwDxJcSZjlBDRXESdWW4lXeyX4KokqggQjFcecHdB399rc9IE935_WC0dS3WnSplZvv2JDSaiTHnqoS4RAnJGvJc5WKpqqjo7I2ZE_83_BwutR58GciRV6BaOhxEK_woANhoqey0/s1600/1311122.gif" style="display: block; height: auto; margin: 0px auto; max-width: 100%;"/>
 <h1 style="font-family: sans-serif; margin: 0px; padding: 15px 10px 5px; text-align: left;">The Boys (Season 1 – 4) Dual Audio {Hindi + English} Complete Web Series ESub 480p | 720p | 1080p – BluRay
 </h1>
 <div class="entry-content" style="font-family: sans-serif; font-size: 17px; line-height: 1.6; padding: 10px;">
@@ -289,6 +291,7 @@
 </div>
 </h2>
 <h2 style="text-align: center;"><span style="font-size: large;">Thank you for visit❤️</span></h2>
+</div>
     </div>
 </main>
 
@@ -342,7 +345,7 @@ function performSearch() {
         return searchWords.every(word => titleLower.includes(word));
     });
     
-    originalContent.style.display = "none";
+    originalContent.style.display="none";
     if (paginationWrapper) paginationWrapper.style.display = "none";
     searchResults.style.display = "grid";
     
@@ -355,4 +358,4 @@ function performSearch() {
 if(input) input.addEventListener("input", performSearch);
 if(searchBtn) searchBtn.addEventListener("click", performSearch);
 </script>
-</body></html>
+</html>

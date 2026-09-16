@@ -243,7 +243,9 @@
     
     <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
     <div id="originalContent" style="width:100%;">
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjzSenONdTcG-iyZFlo4uDs7fYFZaOkih0D7Ajr3nSKKVIP6ac37pAc_dj6719mZYkdN4BT0kQlfw0kWA81NBl6CrfYmOSIVewpsQpRDTjiMePf4W6RGNsiI172h_DDkYns1PshRnIysaUtlDc03LJt0tEWlbnqle6yrvGQhT61mq0Ym_iFL63M47mW98Ow/s674/1282302.jpg" style="max-width:100%;height:auto;"/>
+        <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
+<div id="originalContent" style="width:100%;">
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjzSenONdTcG-iyZFlo4uDs7fYFZaOkih0D7Ajr3nSKKVIP6ac37pAc_dj6719mZYkdN4BT0kQlfw0kWA81NBl6CrfYmOSIVewpsQpRDTjiMePf4W6RGNsiI172h_DDkYns1PshRnIysaUtlDc03LJt0tEWlbnqle6yrvGQhT61mq0Ym_iFL63M47mW98Ow/s674/1282302.jpg" style="max-width:100%;height:auto;"/>
 <h1>
  Batman Begins (2005) Dual Audio {Hindi-English} 480p [400MB] | 720p [1GB] | 1080p [2.7GB]
 </h1>
@@ -483,6 +485,7 @@
   Thank you for visit❤️
  </span>
 </h2>
+</div>
     </div>
 </main>
 
@@ -536,7 +539,7 @@ function performSearch() {
         return searchWords.every(word => titleLower.includes(word));
     });
     
-    originalContent.style.display = "none";
+    originalContent.style.display="none";
     if (paginationWrapper) paginationWrapper.style.display = "none";
     searchResults.style.display = "grid";
     
@@ -549,4 +552,4 @@ function performSearch() {
 if(input) input.addEventListener("input", performSearch);
 if(searchBtn) searchBtn.addEventListener("click", performSearch);
 </script>
-</body></html>
+</html>

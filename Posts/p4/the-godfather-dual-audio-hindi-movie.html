@@ -243,7 +243,9 @@
     
     <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
     <div id="originalContent" style="width:100%;">
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOtijCmYQQdVSVRGWVhd1UnGmjmNqP73Z6y6a2zJ1TGDV7YbLa7YYcLGlZEs5WIOzq1EKgRHEt8hKIrm7DEVdJeVyblBtvbccbZsjrg13MHLThyphenhyphendZmDDv97iA4OjtXUo6MXNwHl3EsyqbHzO8icD2HbpZfgI42Wtbq5h_ykBGsjMmhLbKrFjDjSGFmMT5_/s1420/229467.jpg" style="height: auto; max-width: 100%;"/><h1>The Godfather (1972) Dual Audio [Hindi-English] 480p [500MB] | 720p [1.8GB] | 1080p [4.2GB]
+        <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
+<div id="originalContent" style="width:100%;">
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOtijCmYQQdVSVRGWVhd1UnGmjmNqP73Z6y6a2zJ1TGDV7YbLa7YYcLGlZEs5WIOzq1EKgRHEt8hKIrm7DEVdJeVyblBtvbccbZsjrg13MHLThyphenhyphendZmDDv97iA4OjtXUo6MXNwHl3EsyqbHzO8icD2HbpZfgI42Wtbq5h_ykBGsjMmhLbKrFjDjSGFmMT5_/s1420/229467.jpg" style="height: auto; max-width: 100%;"/><h1>The Godfather (1972) Dual Audio [Hindi-English] 480p [500MB] | 720p [1.8GB] | 1080p [4.2GB]
 </h1>
 <div class="entry-content single-content">
 <p>
@@ -468,6 +470,7 @@
  </span>
 </h2>
 </div>
+</div>
     </div>
 </main>
 
@@ -521,7 +524,7 @@ function performSearch() {
         return searchWords.every(word => titleLower.includes(word));
     });
     
-    originalContent.style.display = "none";
+    originalContent.style.display="none";
     if (paginationWrapper) paginationWrapper.style.display = "none";
     searchResults.style.display = "grid";
     
@@ -534,4 +537,4 @@ function performSearch() {
 if(input) input.addEventListener("input", performSearch);
 if(searchBtn) searchBtn.addEventListener("click", performSearch);
 </script>
-</body></html>
+</html>

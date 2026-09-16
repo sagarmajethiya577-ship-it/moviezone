@@ -243,7 +243,9 @@
     
     <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
     <div id="originalContent" style="width:100%;">
-        <img src="https://i.ibb.co/0pWxLq2M/c3a34a118e65.jpg" style="max-width:100%; height:auto; display:block; margin:0 auto;"/>
+        <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
+<div id="originalContent" style="width:100%;">
+<img src="https://i.ibb.co/0pWxLq2M/c3a34a118e65.jpg" style="max-width:100%; height:auto; display:block; margin:0 auto;"/>
 <h1 style="text-align: left; font-family: sans-serif; padding: 15px 10px 5px 10px; margin: 0;">
 Sarkeet (2025) Dual Audio {Hindi + Malayalam 5.1} Full Movie ESub 480p [450MB] | 720p [1.2GB] | 1080p [2.5GB] – WEB-DL
 </h1>
@@ -341,6 +343,7 @@ This movie is based on <span style="color: #FFA500;"><strong>Drama</strong></spa
 </div>
 </h2>
 <h2 style="text-align: center;"><span style="font-size: large;">Thank you for visit.❤️</span></h2>
+</div>
     </div>
 </main>
 
@@ -394,7 +397,7 @@ function performSearch() {
         return searchWords.every(word => titleLower.includes(word));
     });
     
-    originalContent.style.display = "none";
+    originalContent.style.display="none";
     if (paginationWrapper) paginationWrapper.style.display = "none";
     searchResults.style.display = "grid";
     
@@ -407,4 +410,4 @@ function performSearch() {
 if(input) input.addEventListener("input", performSearch);
 if(searchBtn) searchBtn.addEventListener("click", performSearch);
 </script>
-</body></html>
+</html>

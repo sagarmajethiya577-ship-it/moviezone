@@ -243,7 +243,9 @@
     
     <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
     <div id="originalContent" style="width:100%;">
-        <img loading="lazy" src="https://iili.io/Cy7PFMg.jpg" style="max-width:100%; height:auto; display:block; margin:0 auto;"/>
+        <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
+<div id="originalContent" style="width:100%;">
+<img loading="lazy" src="https://iili.io/Cy7PFMg.jpg" style="max-width:100%; height:auto; display:block; margin:0 auto;"/>
 <h1 style="text-align: left; font-family: sans-serif; padding: 15px 10px 5px 10px; margin: 0;">
 The Westies (Season 1) English With Esubs WEB-DL 720p [410MB] | 1080p [1GB]</h1>
 <div class="entry-content" style="font-family: sans-serif; line-height: 1.6; padding: 10px; font-size: 17px;">
@@ -503,6 +505,7 @@ WEB-DL 1080p x264 [1GB]
 </details>
 </div>
 </main></div>
+</div>
     </div>
 </main>
 
@@ -556,7 +559,7 @@ function performSearch() {
         return searchWords.every(word => titleLower.includes(word));
     });
     
-    originalContent.style.display = "none";
+    originalContent.style.display="none";
     if (paginationWrapper) paginationWrapper.style.display = "none";
     searchResults.style.display = "grid";
     
@@ -569,4 +572,4 @@ function performSearch() {
 if(input) input.addEventListener("input", performSearch);
 if(searchBtn) searchBtn.addEventListener("click", performSearch);
 </script>
-</body></html>
+</html>

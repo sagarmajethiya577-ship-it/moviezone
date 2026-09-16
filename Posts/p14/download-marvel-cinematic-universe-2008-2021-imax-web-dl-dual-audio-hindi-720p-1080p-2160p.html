@@ -243,7 +243,9 @@
     
     <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
     <div id="originalContent" style="width:100%;">
-        <img src="https://vegamovies.cologne/wp-content/uploads/2022/09/Marvel-Cinematic-Universe-poster.png" style="max-width:100%;height:auto;"/>
+        <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
+<div id="originalContent" style="width:100%;">
+<img src="https://vegamovies.cologne/wp-content/uploads/2022/09/Marvel-Cinematic-Universe-poster.png" style="max-width:100%;height:auto;"/>
 <h1>
  Marvel Cinematic Universe (2008-2023) IMAX WEB-DL Dual Audio {Hindi-English} 720p [1.5GB] | 1080p [5GB] | 2160p [15GB]
 </h1>
@@ -948,6 +950,7 @@
   Thank you for visit❤️
  </span>
 </h2>
+</div>
     </div>
 </main>
 
@@ -1001,7 +1004,7 @@ function performSearch() {
         return searchWords.every(word => titleLower.includes(word));
     });
     
-    originalContent.style.display = "none";
+    originalContent.style.display="none";
     if (paginationWrapper) paginationWrapper.style.display = "none";
     searchResults.style.display = "grid";
     
@@ -1014,4 +1017,4 @@ function performSearch() {
 if(input) input.addEventListener("input", performSearch);
 if(searchBtn) searchBtn.addEventListener("click", performSearch);
 </script>
-</body></html>
+</html>

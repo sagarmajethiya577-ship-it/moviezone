@@ -243,7 +243,9 @@
     
     <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
     <div id="originalContent" style="width:100%;">
-        <img loading="lazy" src="https://iili.io/CkQmw12.jpg" style="max-width:100%; height:auto; display:block; margin:0 auto;"/>
+        <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
+<div id="originalContent" style="width:100%;">
+<img loading="lazy" src="https://iili.io/CkQmw12.jpg" style="max-width:100%; height:auto; display:block; margin:0 auto;"/>
 <h1 style="text-align: left; font-family: sans-serif; padding: 15px 10px 5px 10px; margin: 0;">
 Undertone (2025) Dual Audio [Hindi 5.1 + English 5.1] Full Movie ESub 480p [370MB] | 720p [1.1GB] | 1080p [2.2GB] | 2160p [10.4GB] – WEB-DL
 </h1>
@@ -414,6 +416,7 @@ WEB-DL 2160p HEVC [10.4GB]
 Thank you for visit.❤️
 </span>
 </h2>
+</div>
     </div>
 </main>
 
@@ -467,7 +470,7 @@ function performSearch() {
         return searchWords.every(word => titleLower.includes(word));
     });
     
-    originalContent.style.display = "none";
+    originalContent.style.display="none";
     if (paginationWrapper) paginationWrapper.style.display = "none";
     searchResults.style.display = "grid";
     
@@ -480,4 +483,4 @@ function performSearch() {
 if(input) input.addEventListener("input", performSearch);
 if(searchBtn) searchBtn.addEventListener("click", performSearch);
 </script>
-</body></html>
+</html>

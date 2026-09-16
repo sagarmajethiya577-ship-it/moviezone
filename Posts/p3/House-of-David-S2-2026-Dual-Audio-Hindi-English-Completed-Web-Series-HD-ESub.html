@@ -243,7 +243,9 @@
     
     <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
     <div id="originalContent" style="width:100%;">
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhXF8p9oO5Zc2y4ycz56_6Hh2-hsCGczmsPAEriWGd2Bb93F1tcf-DdwT63T6Iiq-1ewfEdZDksv9Q87AFPc3wpr4C6i_6-CvsbiHZNB6JGg49gjl2h3BNeMrA-obBElorBsJ7yjdtOYuF6L9YtljDUeW5ox0WG7CDwte1wqWQt0jpOttSg_KOwt0DkvLs/s3000/1308725.gif" style="display: block; height: auto; margin: 0px auto; max-width: 100%;"/>
+        <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
+<div id="originalContent" style="width:100%;">
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhXF8p9oO5Zc2y4ycz56_6Hh2-hsCGczmsPAEriWGd2Bb93F1tcf-DdwT63T6Iiq-1ewfEdZDksv9Q87AFPc3wpr4C6i_6-CvsbiHZNB6JGg49gjl2h3BNeMrA-obBElorBsJ7yjdtOYuF6L9YtljDUeW5ox0WG7CDwte1wqWQt0jpOttSg_KOwt0DkvLs/s3000/1308725.gif" style="display: block; height: auto; margin: 0px auto; max-width: 100%;"/>
 <h1 style="font-family: sans-serif; margin: 0px; padding: 15px 10px 5px; text-align: left;">House of David S2 (2026) Dual Audio {Hindi-English} 480p | 720p | 1080p WEB-DL – Amazon Prime Video</h1>
 <div class="entry-content" style="font-family: sans-serif; line-height: 1.6; padding: 10px;">
 <main class="page-body">
@@ -318,6 +320,7 @@
 </div>
 </h2>
 <h2 style="text-align: center;"><span style="font-size: large;">Thank you for visit.❤️</span></h2>
+</div>
     </div>
 </main>
 
@@ -371,7 +374,7 @@ function performSearch() {
         return searchWords.every(word => titleLower.includes(word));
     });
     
-    originalContent.style.display = "none";
+    originalContent.style.display="none";
     if (paginationWrapper) paginationWrapper.style.display = "none";
     searchResults.style.display = "grid";
     
@@ -384,4 +387,4 @@ function performSearch() {
 if(input) input.addEventListener("input", performSearch);
 if(searchBtn) searchBtn.addEventListener("click", performSearch);
 </script>
-</body></html>
+</html>

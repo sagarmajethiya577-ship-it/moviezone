@@ -243,7 +243,9 @@
     
     <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
     <div id="originalContent" style="width:100%;">
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgTo9QIMIOVb95f7YTQcZYRLoxZjKTWJNzFEifQZYBZwm7vCBoSJ3RfL-QotczN8YceIf-882-bgLcxsfZiJhGzJYr4ABuCS0nxPl7F5glnE6xH_XwPae4-WMHdzrN8IEJ5ufBPdPreWqcdwHNQEucQ1XT_TYSzBXYjif2qzdld4PasnU-hYLu7JKBmlSk/s450/1299755.jpg" style="max-width:100%; height:auto; display:block; margin:0 auto;"/>
+        <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
+<div id="originalContent" style="width:100%;">
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgTo9QIMIOVb95f7YTQcZYRLoxZjKTWJNzFEifQZYBZwm7vCBoSJ3RfL-QotczN8YceIf-882-bgLcxsfZiJhGzJYr4ABuCS0nxPl7F5glnE6xH_XwPae4-WMHdzrN8IEJ5ufBPdPreWqcdwHNQEucQ1XT_TYSzBXYjif2qzdld4PasnU-hYLu7JKBmlSk/s450/1299755.jpg" style="max-width:100%; height:auto; display:block; margin:0 auto;"/>
 <h1 style="text-align: left; font-family: sans-serif; padding: 15px 10px 5px 10px; margin: 0;">
 The Bravest (2019) Multi Audio {Hindi-English-Chinese} BluRay 480p [500MB] | 720p [1.2GB] | 1080p [2.8GB]
 </h1>
@@ -313,6 +315,7 @@ A group of brave firefighters risk their lives to battle a massive oil pipeline 
 </div>
 </h2>
 <h2 style="text-align: center;"><span style="font-size: large;">Thank you for visit❤️</span></h2>
+</div>
     </div>
 </main>
 
@@ -366,7 +369,7 @@ function performSearch() {
         return searchWords.every(word => titleLower.includes(word));
     });
     
-    originalContent.style.display = "none";
+    originalContent.style.display="none";
     if (paginationWrapper) paginationWrapper.style.display = "none";
     searchResults.style.display = "grid";
     
@@ -379,4 +382,4 @@ function performSearch() {
 if(input) input.addEventListener("input", performSearch);
 if(searchBtn) searchBtn.addEventListener("click", performSearch);
 </script>
-</body></html>
+</html>

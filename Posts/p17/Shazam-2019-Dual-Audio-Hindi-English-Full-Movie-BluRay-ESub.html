@@ -243,7 +243,9 @@
     
     <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
     <div id="originalContent" style="width:100%;">
-        <img loading="lazy" src="https://res.cloudinary.com/dj1csslg1/image/upload/v1778385783/movies_zone/mhhbfdow7kjq1ksspzzm.jpg" style="max-width:100%; height:auto; display:block; margin:0 auto;"/>
+        <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
+<div id="originalContent" style="width:100%;">
+<img loading="lazy" src="https://res.cloudinary.com/dj1csslg1/image/upload/v1778385783/movies_zone/mhhbfdow7kjq1ksspzzm.jpg" style="max-width:100%; height:auto; display:block; margin:0 auto;"/>
 <h1 style="text-align: left; font-family: sans-serif; padding: 15px 10px 5px 10px; margin: 0;">
 Shazam (2019) {Hindi + English} Full Movie ESub 480p [450MB] | 720p [1.4GB] | 1080p [3GB] – BluRay
 </h1>
@@ -287,6 +289,7 @@ Rock Solid security, and zero waiting time!
 </div>
 <h2 style="text-align: center; margin-top: 10px;"><div class="separator" style="clear: both;"><a href="https://t.me/moviesrequest044" rel="noopener noreferrer" style="background-image: linear-gradient(45deg, rgb(156, 39, 176), rgb(233, 30, 99)); border-radius: 10px; border: 2px solid black; color: white; display: inline-block; font-size: 18px; padding: 10px 20px; text-decoration: none;" target="_blank"><span style="font-family: georgia;">💫 Join Telegram 💫</span></a></div></h2>
 <h2 style="text-align: center;"><span style="font-size: large;">Thank you for visit.❤️</span></h2>
+</div>
     </div>
 </main>
 
@@ -340,7 +343,7 @@ function performSearch() {
         return searchWords.every(word => titleLower.includes(word));
     });
     
-    originalContent.style.display = "none";
+    originalContent.style.display="none";
     if (paginationWrapper) paginationWrapper.style.display = "none";
     searchResults.style.display = "grid";
     
@@ -353,4 +356,4 @@ function performSearch() {
 if(input) input.addEventListener("input", performSearch);
 if(searchBtn) searchBtn.addEventListener("click", performSearch);
 </script>
-</body></html>
+</html>

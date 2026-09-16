@@ -243,7 +243,9 @@
     
     <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
     <div id="originalContent" style="width:100%;">
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg0FkhB-4aNbeo-Bq5hiAk4FrMZAdQOlhg4hEsxC8UyD_WIf5vjeqWjI6aPP69nX_YHYe8o5lH5JQb9Y6KGRuOo0QSkiuscmcS2BPu8twiu29QCSUEwevsOdWNt4ZN76Vdnzj_kR7FAFEDLjfTGZxjG0V0BmwDCaBUAWlygOjbbaT11x3MBHmleG2k-MqVP/s1481/229570.jpg" style="height: auto; max-width: 100%;"/>
+        <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
+<div id="originalContent" style="width:100%;">
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg0FkhB-4aNbeo-Bq5hiAk4FrMZAdQOlhg4hEsxC8UyD_WIf5vjeqWjI6aPP69nX_YHYe8o5lH5JQb9Y6KGRuOo0QSkiuscmcS2BPu8twiu29QCSUEwevsOdWNt4ZN76Vdnzj_kR7FAFEDLjfTGZxjG0V0BmwDCaBUAWlygOjbbaT11x3MBHmleG2k-MqVP/s1481/229570.jpg" style="height: auto; max-width: 100%;"/>
 <h1>
  The Godfather Part 3 (1990) Dual Audio [Hindi-English] 480p [500MB] | 720p [1.7GB] 1080p [4GB]
 </h1>
@@ -465,6 +467,7 @@
   Thank you for visit❤️
  </span>
 </h2>
+</div>
     </div>
 </main>
 
@@ -518,7 +521,7 @@ function performSearch() {
         return searchWords.every(word => titleLower.includes(word));
     });
     
-    originalContent.style.display = "none";
+    originalContent.style.display="none";
     if (paginationWrapper) paginationWrapper.style.display = "none";
     searchResults.style.display = "grid";
     
@@ -531,4 +534,4 @@ function performSearch() {
 if(input) input.addEventListener("input", performSearch);
 if(searchBtn) searchBtn.addEventListener("click", performSearch);
 </script>
-</body></html>
+</html>

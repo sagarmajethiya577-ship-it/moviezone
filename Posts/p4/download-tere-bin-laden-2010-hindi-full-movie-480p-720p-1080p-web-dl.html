@@ -243,7 +243,9 @@
     
     <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
     <div id="originalContent" style="width:100%;">
-        <img src="https://rogmovies.pics/wp-content/uploads/2026/02/Tere-Bin-Laden.jpg" style="max-width:100%;height:auto;"/>
+        <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
+<div id="originalContent" style="width:100%;">
+<img src="https://rogmovies.pics/wp-content/uploads/2026/02/Tere-Bin-Laden.jpg" style="max-width:100%;height:auto;"/>
 <h1>
  Tere Bin Laden (2010) Hindi Full Movie 480p [450MB] | 720p [1.2GB] | 1080p [2.6GB] WEB-DL
 </h1>
@@ -454,10 +456,11 @@
   Thank you for visit❤️
  </span>
 </h2>
-r;">
+r;"&gt;
  <span style="font-size: large;">
   Thank you for visit❤️
  </span>
+</div>
     </div>
 </main>
 
@@ -511,7 +514,7 @@ function performSearch() {
         return searchWords.every(word => titleLower.includes(word));
     });
     
-    originalContent.style.display = "none";
+    originalContent.style.display="none";
     if (paginationWrapper) paginationWrapper.style.display = "none";
     searchResults.style.display = "grid";
     
@@ -524,4 +527,4 @@ function performSearch() {
 if(input) input.addEventListener("input", performSearch);
 if(searchBtn) searchBtn.addEventListener("click", performSearch);
 </script>
-</body></html>
+</html>

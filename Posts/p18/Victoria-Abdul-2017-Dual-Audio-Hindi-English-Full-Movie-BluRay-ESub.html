@@ -243,7 +243,9 @@
     
     <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
     <div id="originalContent" style="width:100%;">
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgnLaFHQH9nQ2F3BGSqri2rWyPwhBw3Tc0NnQAWgGRmIHB54O55x5WVfh2_AFYc442zWxOURo40u4_d2Od8wPL6MERmPXI2LV9j-QJAxKlWx0iqvWKct7DmUy_OXAjyiqAsWEPSn4Gpz5Zzy2SptXbu3HcLBk555qO_0czrnNjZUCLeQo51Qu4pXb1X2lE/s2560/1293797.gif" style="max-width:100%; height:auto; display:block; margin:0 auto;"/>
+        <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
+<div id="originalContent" style="width:100%;">
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgnLaFHQH9nQ2F3BGSqri2rWyPwhBw3Tc0NnQAWgGRmIHB54O55x5WVfh2_AFYc442zWxOURo40u4_d2Od8wPL6MERmPXI2LV9j-QJAxKlWx0iqvWKct7DmUy_OXAjyiqAsWEPSn4Gpz5Zzy2SptXbu3HcLBk555qO_0czrnNjZUCLeQo51Qu4pXb1X2lE/s2560/1293797.gif" style="max-width:100%; height:auto; display:block; margin:0 auto;"/>
 <h1 style="text-align: left; font-family: sans-serif; padding: 15px 10px 5px 10px; margin: 0;">
 Victoria &amp; Abdul (2017) Dual Audio {Hindi 5.1 + English 5.1} Full Movie BluRay ESub 480p | 720p | 1080p
 </h1>
@@ -310,6 +312,7 @@ The extraordinary true story of an unexpected friendship between Queen Victoria 
 </div>
 </h2>
 <h2 style="text-align: center;"><span style="font-size: large;">Thank you for visit❤️</span></h2>
+</div>
     </div>
 </main>
 
@@ -363,7 +366,7 @@ function performSearch() {
         return searchWords.every(word => titleLower.includes(word));
     });
     
-    originalContent.style.display = "none";
+    originalContent.style.display="none";
     if (paginationWrapper) paginationWrapper.style.display = "none";
     searchResults.style.display = "grid";
     
@@ -376,4 +379,4 @@ function performSearch() {
 if(input) input.addEventListener("input", performSearch);
 if(searchBtn) searchBtn.addEventListener("click", performSearch);
 </script>
-</body></html>
+</html>

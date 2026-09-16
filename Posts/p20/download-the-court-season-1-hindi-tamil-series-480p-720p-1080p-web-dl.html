@@ -243,7 +243,9 @@
     
     <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
     <div id="originalContent" style="width:100%;">
-        <img loading="lazy" src="https://i.ibb.co/5XZPbB8n/temp-vega-image.jpg" style="max-width:100%; height:auto; display:block; margin:0 auto;"/>
+        <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
+<div id="originalContent" style="width:100%;">
+<img loading="lazy" src="https://i.ibb.co/5XZPbB8n/temp-vega-image.jpg" style="max-width:100%; height:auto; display:block; margin:0 auto;"/>
 <h1 style="text-align: left; font-family: sans-serif; padding: 15px 10px 5px 10px; margin: 0;">
 The Court (Season 1) Hindi – Tamil JioHotstar Complete Web Series 480p | 720p | 1080p WEB-DL [E08 Added]
 </h1>
@@ -495,6 +497,7 @@ Download The Court (2026) Complete Web Series
 Thank you for visit.❤️
 </span>
 </h2>
+</div>
     </div>
 </main>
 
@@ -548,7 +551,7 @@ function performSearch() {
         return searchWords.every(word => titleLower.includes(word));
     });
     
-    originalContent.style.display = "none";
+    originalContent.style.display="none";
     if (paginationWrapper) paginationWrapper.style.display = "none";
     searchResults.style.display = "grid";
     
@@ -561,4 +564,4 @@ function performSearch() {
 if(input) input.addEventListener("input", performSearch);
 if(searchBtn) searchBtn.addEventListener("click", performSearch);
 </script>
-</body></html>
+</html>

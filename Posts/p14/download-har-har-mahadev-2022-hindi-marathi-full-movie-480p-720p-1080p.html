@@ -243,7 +243,9 @@
     
     <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
     <div id="originalContent" style="width:100%;">
-        <img src="https://rogmovies.pics/wp-content/uploads/2022/12/Har-Har-Mahadev-2022.jpg.webp" style="max-width:100%;height:auto;"/>
+        <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
+<div id="originalContent" style="width:100%;">
+<img src="https://rogmovies.pics/wp-content/uploads/2022/12/Har-Har-Mahadev-2022.jpg.webp" style="max-width:100%;height:auto;"/>
 <h1>
  Har Har Mahadev (2022) WEB-DL Dual Audio {Hindi-Marathi} 480p [550MB] | 720p [900MB] | 1080p [2.3GB]
 </h1>
@@ -574,6 +576,7 @@
   Thank you for visit❤️
  </span>
 </h2>
+</div>
     </div>
 </main>
 
@@ -627,7 +630,7 @@ function performSearch() {
         return searchWords.every(word => titleLower.includes(word));
     });
     
-    originalContent.style.display = "none";
+    originalContent.style.display="none";
     if (paginationWrapper) paginationWrapper.style.display = "none";
     searchResults.style.display = "grid";
     
@@ -640,4 +643,4 @@ function performSearch() {
 if(input) input.addEventListener("input", performSearch);
 if(searchBtn) searchBtn.addEventListener("click", performSearch);
 </script>
-</body></html>
+</html>

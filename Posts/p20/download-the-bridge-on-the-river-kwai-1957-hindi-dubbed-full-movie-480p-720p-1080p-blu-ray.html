@@ -243,7 +243,9 @@
     
     <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
     <div id="originalContent" style="width:100%;">
-        <img loading="lazy" src="https://i.ibb.co/JjPxGJ6L/temp-vega-image.webp" style="max-width:100%; height:auto; display:block; margin:0 auto;"/>
+        <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
+<div id="originalContent" style="width:100%;">
+<img loading="lazy" src="https://i.ibb.co/JjPxGJ6L/temp-vega-image.webp" style="max-width:100%; height:auto; display:block; margin:0 auto;"/>
 <h1 style="text-align: left; font-family: sans-serif; padding: 15px 10px 5px 10px; margin: 0;">
 The Bridge on the River Kwai (1957) Blu-Ray Dual Audio {Hindi-English} 480p [630MB] | 720p [1.7GB] | 1080p [3.4GB]
 </h1>
@@ -354,6 +356,7 @@ Download The Bridge on the River Kwai (1957) Full Movie
 Thank you for visit.❤️
 </span>
 </h2>
+</div>
     </div>
 </main>
 
@@ -407,7 +410,7 @@ function performSearch() {
         return searchWords.every(word => titleLower.includes(word));
     });
     
-    originalContent.style.display = "none";
+    originalContent.style.display="none";
     if (paginationWrapper) paginationWrapper.style.display = "none";
     searchResults.style.display = "grid";
     
@@ -420,4 +423,4 @@ function performSearch() {
 if(input) input.addEventListener("input", performSearch);
 if(searchBtn) searchBtn.addEventListener("click", performSearch);
 </script>
-</body></html>
+</html>

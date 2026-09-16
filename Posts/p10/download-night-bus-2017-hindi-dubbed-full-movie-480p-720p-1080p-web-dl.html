@@ -243,7 +243,9 @@
     
     <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
     <div id="originalContent" style="width:100%;">
-        <div class="movies-zone-post">
+        <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
+<div id="originalContent" style="width:100%;">
+<div class="movies-zone-post">
 <p style="text-align: center;"><img src="https://i.ibb.co/SDPcmnKn/b80fe38c146b.jpg" style="max-width:100%; height:auto; border-radius: 10px;"/></p>
 <header class="post-header">
 <h1 class="post-title">Night Bus (2017) Hindi WEB-DL Full Movie 480p [400MB] | 720p [1GB] | 1080p [2.5GB]</h1>
@@ -277,6 +279,7 @@ At <a href="/"><strong><span style="color: #ffff00;">Movies Zone 🍿</span></st
 <hr/>
 </main>
 <div style="text-align: center; margin-top: 20px;"><a href="https://t.me/moviesrequest044" style="background-image: linear-gradient(45deg, rgb(156, 39, 176), rgb(233, 30, 99)); border-radius: 10px; border: 2px solid black; color: white; display: inline-block; font-size: 18px; padding: 10px 20px; text-decoration: none;" target="_blank"><span style="font-family: georgia;">💫 Join Telegram 💫</span></a><h2 style="margin-top: 15px;"><span style="font-size: large;">Thank you for visit❤️</span></h2></div>
+</div>
 </div>
     </div>
 </main>
@@ -331,7 +334,7 @@ function performSearch() {
         return searchWords.every(word => titleLower.includes(word));
     });
     
-    originalContent.style.display = "none";
+    originalContent.style.display="none";
     if (paginationWrapper) paginationWrapper.style.display = "none";
     searchResults.style.display = "grid";
     
@@ -344,4 +347,4 @@ function performSearch() {
 if(input) input.addEventListener("input", performSearch);
 if(searchBtn) searchBtn.addEventListener("click", performSearch);
 </script>
-</body></html>
+</html>

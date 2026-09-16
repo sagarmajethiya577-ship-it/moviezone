@@ -243,7 +243,9 @@
     
     <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
     <div id="originalContent" style="width:100%;">
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh79E3W8SvwK_YQMo7kNm_VJ4YZZwqqvdVulnR35Rh9Kq_fjROavj4u0LjNSYnr2q9Bt79bR1qlUGLC7g5wCMBXVe7KNVDnuziksDfPI0qZRfGse-wva1mDoptg9TcmKUloL8E0mH6ojKcDsb9ZbAqCB7AFNyo7upTApTmhp1wIr3hP13zBkQ7M-AvJBct3/s512/1272907.jpg" style="max-width:100%;height:auto;"/>
+        <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
+<div id="originalContent" style="width:100%;">
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh79E3W8SvwK_YQMo7kNm_VJ4YZZwqqvdVulnR35Rh9Kq_fjROavj4u0LjNSYnr2q9Bt79bR1qlUGLC7g5wCMBXVe7KNVDnuziksDfPI0qZRfGse-wva1mDoptg9TcmKUloL8E0mH6ojKcDsb9ZbAqCB7AFNyo7upTApTmhp1wIr3hP13zBkQ7M-AvJBct3/s512/1272907.jpg" style="max-width:100%;height:auto;"/>
 <h1>
  13 Hours (2016) Dual Audio {Hindi-English} 480p [450MB] | 720p [1.2GB] | 1080p [3GB]
 </h1>
@@ -485,6 +487,7 @@
   Thank you for visit❤️
  </span>
 </h2>
+</div>
     </div>
 </main>
 
@@ -538,7 +541,7 @@ function performSearch() {
         return searchWords.every(word => titleLower.includes(word));
     });
     
-    originalContent.style.display = "none";
+    originalContent.style.display="none";
     if (paginationWrapper) paginationWrapper.style.display = "none";
     searchResults.style.display = "grid";
     
@@ -551,4 +554,4 @@ function performSearch() {
 if(input) input.addEventListener("input", performSearch);
 if(searchBtn) searchBtn.addEventListener("click", performSearch);
 </script>
-</body></html>
+</html>

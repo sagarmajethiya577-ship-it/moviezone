@@ -243,7 +243,9 @@
     
     <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
     <div id="originalContent" style="width:100%;">
-        <img loading="lazy" src="https://i.ibb.co/8nZGTd4h/shatir-et00505234-1782730131.jpg" style="display: block; height: auto; margin: 0px auto; max-width: 100%;"/>
+        <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
+<div id="originalContent" style="width:100%;">
+<img loading="lazy" src="https://i.ibb.co/8nZGTd4h/shatir-et00505234-1782730131.jpg" style="display: block; height: auto; margin: 0px auto; max-width: 100%;"/>
 <h1 style="font-family: sans-serif; margin: 0px; padding: 15px 10px 5px; text-align: left;">Shatir (2026) Gujarati AAC 480p [420MB] | 720p [990MB] | 1080p [2.1GB] – HDTC
 </h1>
 <div class="entry-content" style="font-family: sans-serif; font-size: 17px; line-height: 1.6; padding: 10px;">
@@ -343,6 +345,7 @@ Download Shatir (2026) Gujarati 480p 720p 1080p ~ Movies Zone 🍿
 Thank you for visit.❤️
 </span>
 </h2>
+</div>
     </div>
 </main>
 
@@ -396,7 +399,7 @@ function performSearch() {
         return searchWords.every(word => titleLower.includes(word));
     });
     
-    originalContent.style.display = "none";
+    originalContent.style.display="none";
     if (paginationWrapper) paginationWrapper.style.display = "none";
     searchResults.style.display = "grid";
     
@@ -409,4 +412,4 @@ function performSearch() {
 if(input) input.addEventListener("input", performSearch);
 if(searchBtn) searchBtn.addEventListener("click", performSearch);
 </script>
-</body></html>
+</html>

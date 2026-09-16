@@ -243,7 +243,9 @@
     
     <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
     <div id="originalContent" style="width:100%;">
-        <img src="https://vegamovies.gt/img/2026/01/Agatha-Christies-Seven-Dials.jpg" style="height: auto; max-width: 100%;"/>
+        <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
+<div id="originalContent" style="width:100%;">
+<img src="https://vegamovies.gt/img/2026/01/Agatha-Christies-Seven-Dials.jpg" style="height: auto; max-width: 100%;"/>
 <h1>
  Agatha Christie’s Seven Dials (2026) Season 1 Dual-Audio {Hindi-English} Netflix-Series 480p | 720p | 1080p WEB-DL
 </h1>
@@ -511,10 +513,8 @@
  </span>
 </h2>
 </div>
-
-
-
 </div></div></div></div></div>
+</div>
     </div>
 </main>
 
@@ -568,7 +568,7 @@ function performSearch() {
         return searchWords.every(word => titleLower.includes(word));
     });
     
-    originalContent.style.display = "none";
+    originalContent.style.display="none";
     if (paginationWrapper) paginationWrapper.style.display = "none";
     searchResults.style.display = "grid";
     
@@ -581,4 +581,4 @@ function performSearch() {
 if(input) input.addEventListener("input", performSearch);
 if(searchBtn) searchBtn.addEventListener("click", performSearch);
 </script>
-</body></html>
+</html>

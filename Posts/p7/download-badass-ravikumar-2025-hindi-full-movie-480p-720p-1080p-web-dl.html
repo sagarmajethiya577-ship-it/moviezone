@@ -243,7 +243,9 @@
     
     <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
     <div id="originalContent" style="width:100%;">
-        <div class="post-layout">
+        <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
+<div id="originalContent" style="width:100%;">
+<div class="post-layout">
 <p style="text-align:center;">
 <img src="https://i.ibb.co/S7n6HMwq/81220c1c913c.jpg" style="max-width:100%; height:auto; border-radius:10px;"/>
 </p>
@@ -293,6 +295,7 @@ Enjoy blazing-fast downloads, Rock Solid security, and zero waiting time!
 <span style="font-family: georgia;">💫 Join Telegram 💫</span>
 </a>
 <h2 style="margin-top: 15px;"><span style="font-size: large;">Thank you for visit❤️</span></h2>
+</div>
 </div>
 </div>
     </div>
@@ -348,7 +351,7 @@ function performSearch() {
         return searchWords.every(word => titleLower.includes(word));
     });
     
-    originalContent.style.display = "none";
+    originalContent.style.display="none";
     if (paginationWrapper) paginationWrapper.style.display = "none";
     searchResults.style.display = "grid";
     
@@ -361,4 +364,4 @@ function performSearch() {
 if(input) input.addEventListener("input", performSearch);
 if(searchBtn) searchBtn.addEventListener("click", performSearch);
 </script>
-</body></html>
+</html>

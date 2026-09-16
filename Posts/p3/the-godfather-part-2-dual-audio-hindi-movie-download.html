@@ -243,7 +243,9 @@
     
     <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
     <div id="originalContent" style="width:100%;">
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhsYTiZunO_b8PvSmxNjN-sR6U5hRKOnoDK55hWwPl7YoChb76ZsZrd1ey8_gMDOA8_PPR9hbLlAzhdRISqJ-hGzEyqvLEpyc351hOuFYzuUKtPLtyy7fjvMcTVUdHltkBmtueW9a0zx0krbMbIzZbfXTCRYl2uPc8svUsNn4kcar5ONH5phHGXiM5H1bUU/s1500/229569.jpg" style="height: auto; max-width: 100%;"/>
+        <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
+<div id="originalContent" style="width:100%;">
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhsYTiZunO_b8PvSmxNjN-sR6U5hRKOnoDK55hWwPl7YoChb76ZsZrd1ey8_gMDOA8_PPR9hbLlAzhdRISqJ-hGzEyqvLEpyc351hOuFYzuUKtPLtyy7fjvMcTVUdHltkBmtueW9a0zx0krbMbIzZbfXTCRYl2uPc8svUsNn4kcar5ONH5phHGXiM5H1bUU/s1500/229569.jpg" style="height: auto; max-width: 100%;"/>
 <h1>The Godfather Part 2 (1974) Dual Audio {Hindi-English} 480p [600MB] | 720p [2GB] | 1080p [5GB]
 </h1>
 <div class="entry-content single-content">
@@ -468,6 +470,7 @@
   Thank you for visit❤️
  </span>
 </h2>
+</div>
     </div>
 </main>
 
@@ -521,7 +524,7 @@ function performSearch() {
         return searchWords.every(word => titleLower.includes(word));
     });
     
-    originalContent.style.display = "none";
+    originalContent.style.display="none";
     if (paginationWrapper) paginationWrapper.style.display = "none";
     searchResults.style.display = "grid";
     
@@ -534,4 +537,4 @@ function performSearch() {
 if(input) input.addEventListener("input", performSearch);
 if(searchBtn) searchBtn.addEventListener("click", performSearch);
 </script>
-</body></html>
+</html>
