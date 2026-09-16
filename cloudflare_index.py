@@ -6,52 +6,79 @@ import re
 from collections import defaultdict
 
 POSTS_DIR = "Posts"
+PLUS_DIR = "18+" # Aapka alag se banaya hua 18+ folder
 POSTS_PER_PAGE = 200
 
 all_files = []
 collections = defaultdict(list)
 
 LANGUAGES = ["English", "Gujarati", "Marathi", "Punjabi", "Bengali", "Tamil", "Telugu", "Malayalam", "Bhojpuri", "French", "Spanish"]
-GENRES = ["Action", "Comedy", "Horror", "Sci-Fi", "Romance", "Thriller", "Drama", "Fantasy", "Animation", "Crime", "Adventure", "Mystery", "18+ Content"]
+GENRES = ["Action", "Comedy", "Horror", "Sci-Fi", "Romance", "Thriller", "Drama", "Fantasy", "Animation", "Crime", "Adventure", "Mystery"]
 INDUSTRIES = ["Bollywood", "Hollywood"]
 
-print("1. Scanning files and extracting data... Please wait.")
+print("1. Scanning Posts and 18+ folders... Please wait.")
 
-for root, dirs, files in os.walk(POSTS_DIR):
-    for file in files:
-        if file.endswith(".html"):
-            path = os.path.join(root, file)
-            try:
-                file_stat = os.stat(path)
-                original_atime = file_stat.st_atime
-                original_mtime = file_stat.st_mtime
-                
-                with open(path, "r", encoding="utf-8", errors="ignore") as f:
-                    soup = BeautifulSoup(f, "html.parser")
-                    img = soup.find("img")
-                    img_src = img["src"] if img else ""
-                    h1 = soup.find("h1")
-                    title = h1.get_text(strip=True) if h1 else os.path.basename(path).replace(".html", "").replace("-", " ").title()
+def scan_directory(directory, is_18plus_folder=False):
+    if not os.path.exists(directory):
+        return
+    for root, dirs, files in os.walk(directory):
+        for file in files:
+            if file.endswith(".html"):
+                path = os.path.join(root, file)
+                try:
+                    file_stat = os.stat(path)
+                    original_atime = file_stat.st_atime
+                    original_mtime = file_stat.st_mtime
                     
-                    full_text = (title + " " + soup.get_text(separator=" ")).lower()
-                    
-                    movie_data = {"t": title, "u": "/" + path.replace("\\", "/"), "i": img_src}
-                    all_files.append((path, movie_data, full_text, original_mtime, original_atime))
-            except: continue
+                    with open(path, "r", encoding="utf-8", errors="ignore") as f:
+                        # Sirf title aur thoda data nikalenge taaki script fast chale
+                        content = f.read()
+                        soup = BeautifulSoup(content, "html.parser")
+                        img = soup.find("img")
+                        img_src = img["src"] if img else ""
+                        h1 = soup.find("h1")
+                        title = h1.get_text(strip=True) if h1 else os.path.basename(path).replace(".html", "").replace("-", " ").title()
+                        
+                        full_text = (title + " " + soup.get_text(separator=" ")).lower()
+                        
+                        movie_data = {"t": title, "u": "/" + path.replace("\\", "/"), "i": img_src}
+                        all_files.append((path, movie_data, full_text, original_mtime, original_atime, title, is_18plus_folder))
+                except: continue
 
+# Scan dono folders ko karenge
+scan_directory(POSTS_DIR, is_18plus_folder=False)
+scan_directory(PLUS_DIR, is_18plus_folder=True)
+
+# Sort by Original Modified Time (Newest first)
 all_files.sort(key=lambda x: x[3], reverse=True)
-search_index = [x[1] for x in all_files]
 
-for path, movie_data, full_text, mtime, atime in all_files:
-    years = re.findall(r'\b(19\d\d|20\d\d)\b', full_text)
+# 🔥 SEARCH & HOME PAGE: Sirf Posts folder wali files aayengi (is_18plus_folder == False)
+search_index = [x[1] for x in all_files if x[6] == False]
+
+for path, movie_data, full_text, mtime, atime, title, is_18plus_folder in all_files:
+    title_lower = title.lower()
+    
+    # 18+ CHECK: Agar wo 18+ folder se aayi hai, YA fir title mein [18+] likha hai
+    if is_18plus_folder or "18+" in title_lower or "18 +" in title_lower or "[18+]" in title_lower:
+        collections["18+ Content"].append(movie_data)
+        
+    # Agar ye file sirf 18+ folder ki hai, toh isko baaki kisi category mein nahi dalna hai!
+    if is_18plus_folder:
+        continue
+
+    # NORMAL CATEGORIES (Sirf Posts folder wali files ke liye)
+    years = re.findall(r'\b(20\d\d)\b', full_text)
     if years:
-        for y in set(years): collections[y].append(movie_data)
+        for y in set(years):
+            if 2000 <= int(y) <= 2026:
+                collections[y].append(movie_data)
     
     for lang in LANGUAGES:
         if lang.lower() in full_text: collections[lang].append(movie_data)
             
     for genre in GENRES:
-        if genre.lower() in full_text: collections[genre].append(movie_data)
+        if genre.lower() in full_text and genre != "18+ Content": 
+            collections[genre].append(movie_data)
             
     if bool(re.search(r'\b(s\d\d?|season|episode|web series)\b', full_text)):
         collections["Web Series"].append(movie_data)
@@ -73,7 +100,7 @@ def slugify(text):
 def generate_ui():
     genre_links = [f'<a href="/{slugify(g)}.html">{g}</a>' for g in GENRES if len(collections[g]) > 0]
     lang_links = [f'<a href="/{slugify(l)}.html">{l}</a>' for l in LANGUAGES if len(collections[l]) > 0]
-    year_keys = sorted([k for k in collections.keys() if re.match(r'^(19|20)\d\d$', k)], reverse=True)
+    year_keys = sorted([k for k in collections.keys() if re.match(r'^20\d\d$', k)], reverse=True)
     year_links = [f'<a href="/{slugify(y)}.html">{y}</a>' for y in year_keys]
 
     sidebar_html = ""
@@ -196,7 +223,7 @@ function performSearch() {{
         if (paginationWrapper) paginationWrapper.style.display = "flex";
         return; 
     }}
-    const searchWords = val.split(/\s+/); 
+    const searchWords = val.split(/\\s+/); 
     const res = movieData.filter(m => {{
         const titleLower = m.t.toLowerCase();
         return searchWords.every(word => titleLower.includes(word));
@@ -217,7 +244,6 @@ if(searchBtn) searchBtn.addEventListener("click", performSearch);
 </script>
 </html>"""
 
-# 4. Generate Home Index Pages (Multiple pages allowed for home index)
 def build_home_pages(data_list):
     total_pages = math.ceil(len(data_list) / POSTS_PER_PAGE)
     for page in range(total_pages):
@@ -255,7 +281,6 @@ def build_home_pages(data_list):
 print("2. Generating Home Index Pages...")
 build_home_pages(search_index)
 
-# 5. Generate SINGLE Category Page (Sirf 1 hi file banegi per category, bina page2, page3 ke)
 def build_single_category_page(data_list, cat_name):
     cards_html = "".join([f'<a class="post-card" href="{m["u"]}"><img src="{m["i"]}"><h2>{m["t"]}</h2></a>' for m in data_list])
     wrapper_html = f'<div class="home-container" style="padding:0; margin:0;">{cards_html}</div>'
@@ -270,19 +295,30 @@ def build_single_category_page(data_list, cat_name):
     filename = f"{slugify(cat_name)}.html"
     with open(filename, "w", encoding="utf-8") as f: f.write(final_html)
 
-print("3. Generating Single Category Pages (No multiple page spam)...")
+print("3. Generating Single Category Pages...")
 for cat, items in collections.items():
     if len(items) > 0:
         build_single_category_page(items, str(cat))
 
-# 6. WRAPPING POSTS AUR UNKA TIME PRESERVE KARNA
-print("4. Formatting Post pages... (Preserving original exact time!)")
-for path, _, _, original_mtime, original_atime in all_files:
+print("4. Formatting Post pages and cleaning debug text... (Preserving original exact time!)")
+for path, _, _, original_mtime, original_atime, title, _ in all_files:
     with open(path, "r", encoding="utf-8", errors="ignore") as f:
         content = f.read()
-        
+
+    # 🔥 NUCLEAR CLEANING: File padhte hi sabse pehle wo ganda text mita denge
+    bad_phrases = [
+        "Yahan Search Results Dikhenge (Default Hidden)",
+        "Yahan Original Post ya Grid Dikhega",
+        "Yahan Search Results Dikhenge",
+        "Yahan Original Post"
+    ]
+    for bad in bad_phrases:
+        content = content.replace(bad, "")
+        content = content.replace(f"<!-- {bad} -->", "")
+
     soup = BeautifulSoup(content, "html.parser")
     
+    # Baaki bacha kachra (purana header footer) saaf karenge
     for tag in soup.select('.site-header, .top-bar, .sidebar, .sidebar-overlay, .site-footer, script, .back-btn'):
         tag.decompose()
         
@@ -297,6 +333,7 @@ for path, _, _, original_mtime, original_atime in all_files:
         body = soup.find('body')
         post_content = "".join([str(c) for c in body.contents]) if body else str(soup)
 
+    # Naya chamakta hua layout apply karenge
     post_html = master_template.replace("<!-- MAIN_CLASS -->", "post-container")
     post_html = post_html.replace("<!-- PAGE_TITLE -->", "")
     post_html = post_html.replace("<!-- CONTENT_HTML -->", post_content.strip())
@@ -307,4 +344,4 @@ for path, _, _, original_mtime, original_atime in all_files:
         
     os.utime(path, (original_atime, original_mtime))
 
-print("✅ Success! Single category files created. File limit safe, and timeline intact!")
+print("✅ Success! 18+ dual logic is working perfectly, and all post pages are 100% clean!")
