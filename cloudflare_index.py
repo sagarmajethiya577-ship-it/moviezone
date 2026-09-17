@@ -12,7 +12,8 @@ POSTS_PER_PAGE = 200
 all_files = []
 collections = defaultdict(list)
 
-LANGUAGES = ["English", "Gujarati", "Marathi", "Punjabi", "Bengali", "Tamil", "Telugu", "Malayalam", "Bhojpuri", "French", "Spanish"]
+# Kannada language add kar di gayi hai
+LANGUAGES = ["English", "Gujarati", "Marathi", "Punjabi", "Bengali", "Tamil", "Telugu", "Malayalam", "Kannada", "Bhojpuri", "French", "Spanish"]
 GENRES = ["Action", "Comedy", "Horror", "Sci-Fi", "Romance", "Thriller", "Drama", "Fantasy", "Animation", "Crime", "Adventure", "Mystery"]
 INDUSTRIES = ["Bollywood", "Hollywood"]
 
@@ -31,9 +32,13 @@ def scan_directory(directory, is_18plus_folder=False):
                     original_mtime = file_stat.st_mtime
                     
                     with open(path, "r", encoding="utf-8", errors="ignore") as f:
-                        # Sirf title aur thoda data nikalenge taaki script fast chale
                         content = f.read()
                         soup = BeautifulSoup(content, "html.parser")
+                        
+                        # Menu aur Sidebar ka text scan na ho, isliye unhe ignore kar do
+                        for tag in soup.select('.site-header, .top-bar, .sidebar, .sidebar-overlay, .site-footer'):
+                            tag.decompose()
+                            
                         img = soup.find("img")
                         img_src = img["src"] if img else ""
                         h1 = soup.find("h1")
@@ -52,21 +57,20 @@ scan_directory(PLUS_DIR, is_18plus_folder=True)
 # Sort by Original Modified Time (Newest first)
 all_files.sort(key=lambda x: x[3], reverse=True)
 
-# 🔥 SEARCH & HOME PAGE: Sirf Posts folder wali files aayengi (is_18plus_folder == False)
+# SEARCH & HOME PAGE: Sirf Posts folder wali files aayengi (is_18plus_folder == False)
 search_index = [x[1] for x in all_files if x[6] == False]
 
 for path, movie_data, full_text, mtime, atime, title, is_18plus_folder in all_files:
     title_lower = title.lower()
     
-    # 18+ CHECK: Agar wo 18+ folder se aayi hai, YA fir title mein [18+] likha hai
+    # 18+ CHECK
     if is_18plus_folder or "18+" in title_lower or "18 +" in title_lower or "[18+]" in title_lower:
         collections["18+ Content"].append(movie_data)
         
-    # Agar ye file sirf 18+ folder ki hai, toh isko baaki kisi category mein nahi dalna hai!
     if is_18plus_folder:
         continue
 
-    # NORMAL CATEGORIES (Sirf Posts folder wali files ke liye)
+    # NORMAL CATEGORIES
     years = re.findall(r'\b(20\d\d)\b', full_text)
     if years:
         for y in set(years):
@@ -88,7 +92,11 @@ for path, movie_data, full_text, mtime, atime, title, is_18plus_folder in all_fi
     for ind in INDUSTRIES:
         if ind.lower() in full_text: collections[ind].append(movie_data)
     
-    if "south" in full_text and ("hindi" in full_text or "dubbed" in full_text):
+    # 🔥 ALL SOUTH MOVIES LOGIC (Tamil, Telugu, Malayalam, Kannada sab isme aayenge)
+    south_langs = ["tamil", "telugu", "malayalam", "kannada"]
+    is_south_movie = any(lang in full_text for lang in south_langs) or ("south" in full_text and ("hindi" in full_text or "dubbed" in full_text))
+    
+    if is_south_movie:
         collections["South Hindi Dubbed"].append(movie_data)
 
 with open("search_data.json", "w", encoding="utf-8") as f:
@@ -246,6 +254,7 @@ if(searchBtn) searchBtn.addEventListener("click", performSearch);
 
 def build_home_pages(data_list):
     total_pages = math.ceil(len(data_list) / POSTS_PER_PAGE)
+    if total_pages == 0: return
     for page in range(total_pages):
         current_page = page + 1
         start = page * POSTS_PER_PAGE
@@ -305,7 +314,7 @@ for path, _, _, original_mtime, original_atime, title, _ in all_files:
     with open(path, "r", encoding="utf-8", errors="ignore") as f:
         content = f.read()
 
-    # 🔥 NUCLEAR CLEANING: File padhte hi sabse pehle wo ganda text mita denge
+    # NUCLEAR CLEANING
     bad_phrases = [
         "Yahan Search Results Dikhenge (Default Hidden)",
         "Yahan Original Post ya Grid Dikhega",
@@ -318,22 +327,26 @@ for path, _, _, original_mtime, original_atime, title, _ in all_files:
 
     soup = BeautifulSoup(content, "html.parser")
     
-    # Baaki bacha kachra (purana header footer) saaf karenge
-    for tag in soup.select('.site-header, .top-bar, .sidebar, .sidebar-overlay, .site-footer, script, .back-btn'):
-        tag.decompose()
-        
-    for a in soup.find_all('a'):
-        if 'back' in a.get_text().lower() and len(a.get_text().strip()) < 15:
-            a.decompose()
-            
-    post_container = soup.find(class_='post-container')
-    if post_container:
-        post_content = "".join([str(c) for c in post_container.contents])
+    # BULLETPROOF EXTRACTION
+    original_content_div = soup.find(id='originalContent')
+    
+    if original_content_div:
+        post_content = "".join([str(c) for c in original_content_div.contents])
     else:
-        body = soup.find('body')
-        post_content = "".join([str(c) for c in body.contents]) if body else str(soup)
+        for tag in soup.select('.site-header, .top-bar, .sidebar, .sidebar-overlay, .site-footer, script, .back-btn'):
+            tag.decompose()
+            
+        for a in soup.find_all('a'):
+            if 'back' in a.get_text().lower() and len(a.get_text().strip()) < 15:
+                a.decompose()
+                
+        post_container = soup.find(class_='post-container')
+        if post_container:
+            post_content = "".join([str(c) for c in post_container.contents])
+        else:
+            body = soup.find('body')
+            post_content = "".join([str(c) for c in body.contents]) if body else str(soup)
 
-    # Naya chamakta hua layout apply karenge
     post_html = master_template.replace("<!-- MAIN_CLASS -->", "post-container")
     post_html = post_html.replace("<!-- PAGE_TITLE -->", "")
     post_html = post_html.replace("<!-- CONTENT_HTML -->", post_content.strip())
@@ -344,4 +357,4 @@ for path, _, _, original_mtime, original_atime, title, _ in all_files:
         
     os.utime(path, (original_atime, original_mtime))
 
-print("✅ Success! 18+ dual logic is working perfectly, and all post pages are 100% clean!")
+print("✅ Success! All South Indian movies (Tamil, Telugu, Malayalam, Kannada) are now unified under 'South Hindi Dubbed'. Menu remains unchanged!")
