@@ -1,0 +1,1949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="https://bleatbehind.com/77/19/55/7719558a2ddf75875325865ff105e8f4.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XRNB9X1DJ2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XRNB9X1DJ2');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movies Zone</title>
+<link rel="stylesheet" href="/style.css">
+<style>
+    .pagination { display: flex; justify-content: center; align-items: center; gap: 5px; margin: 30px 10px; flex-wrap: wrap; }
+    .page-btn, .page-num { padding: 8px 12px; border: 1px solid #00ff88; color: #00ff88; text-decoration: none; border-radius: 4px; font-size: 14px; min-width: 35px; text-align: center; }
+    .page-num.active { background: #00ff88; color: #000; font-weight: bold; border-color: #00ff88; }
+    .dots { color: #00ff88; padding: 0 5px; }
+    .page-btn:hover, .page-num:hover:not(.active) { background: rgba(0, 255, 136, 0.1); }
+    @media (max-width: 600px) { .page-btn { font-size: 12px; padding: 6px 10px; } }
+</style>
+</head>
+<body>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<div class="sidebar" id="sidebar">
+    <button class="close-btn" id="closeSidebar">&times;</button>
+    <div class="sidebar-content">
+        
+<div class="accordion-header"><span>Category / Genre</span><span class="icon">+</span></div>
+<div class="accordion-body">
+<a href="/action.html">Action</a>
+<a href="/comedy.html">Comedy</a>
+<a href="/horror.html">Horror</a>
+<a href="/sci-fi.html">Sci-Fi</a>
+<a href="/romance.html">Romance</a>
+<a href="/thriller.html">Thriller</a>
+<a href="/drama.html">Drama</a>
+<a href="/fantasy.html">Fantasy</a>
+<a href="/animation.html">Animation</a>
+<a href="/crime.html">Crime</a>
+<a href="/adventure.html">Adventure</a>
+<a href="/mystery.html">Mystery</a>
+</div>
+<div class="accordion-header"><span>Language</span><span class="icon">+</span></div>
+<div class="accordion-body">
+<a href="/english.html">English</a>
+<a href="/gujarati.html">Gujarati</a>
+<a href="/marathi.html">Marathi</a>
+<a href="/punjabi.html">Punjabi</a>
+<a href="/bengali.html">Bengali</a>
+<a href="/tamil.html">Tamil</a>
+<a href="/telugu.html">Telugu</a>
+<a href="/malayalam.html">Malayalam</a>
+<a href="/kannada.html">Kannada</a>
+<a href="/bhojpuri.html">Bhojpuri</a>
+<a href="/french.html">French</a>
+<a href="/spanish.html">Spanish</a>
+</div>
+<div class="accordion-header"><span>Year</span><span class="icon">+</span></div>
+<div class="accordion-body">
+<a href="/2026.html">2026</a>
+<a href="/2025.html">2025</a>
+<a href="/2024.html">2024</a>
+<a href="/2023.html">2023</a>
+<a href="/2022.html">2022</a>
+<a href="/2021.html">2021</a>
+<a href="/2020.html">2020</a>
+<a href="/2019.html">2019</a>
+<a href="/2018.html">2018</a>
+<a href="/2017.html">2017</a>
+<a href="/2016.html">2016</a>
+<a href="/2015.html">2015</a>
+<a href="/2014.html">2014</a>
+<a href="/2013.html">2013</a>
+<a href="/2012.html">2012</a>
+<a href="/2011.html">2011</a>
+<a href="/2010.html">2010</a>
+<a href="/2009.html">2009</a>
+<a href="/2008.html">2008</a>
+<a href="/2007.html">2007</a>
+<a href="/2006.html">2006</a>
+<a href="/2005.html">2005</a>
+<a href="/2004.html">2004</a>
+<a href="/2003.html">2003</a>
+<a href="/2002.html">2002</a>
+<a href="/2001.html">2001</a>
+<a href="/2000.html">2000</a>
+</div>
+    </div>
+</div>
+
+<div class="top-bar">
+    <button class="menu-btn" id="openSidebar">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+    </button>
+</div>
+
+<header class="site-header">
+    <div class="header-content">
+        <a href="/" class="site-title">Movies Zone</a>
+        <div class="search-wrapper">
+            <input type="text" id="searchInput" placeholder="Search Movies or WEB-Series here">
+            <button id="searchBtn">SEARCH</button>
+        </div>
+        <div class="category-container">
+            
+        <a href="https://t.me/moviesrequest044" target="_blank" class="tg-btn">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.02-.27 0-.12.03-1.96 1.25-5.54 3.67-.52.36-.99.53-1.41.52-.46-.01-1.35-.26-2.01-.48-.81-.27-1.46-.42-1.4-.88.03-.24.36-.48.98-.74 3.84-1.67 6.4-2.77 7.68-3.3 3.63-1.5 4.38-1.76 4.87-1.77.11 0 .35.03.48.14.11.09.14.22.15.31.02.13.01.24 0 .34z"/></svg>
+            Join Telegram
+        </a>
+        <a href="/18-content.html" class="cat-btn">18+ Content</a>
+        <a href="/bollywood.html" class="cat-btn">Bollywood</a>
+        <a href="/hollywood.html" class="cat-btn">Hollywood</a>
+        <a href="/south-hindi-dubbed.html" class="cat-btn">South Hindi Dubbed</a>
+        <a href="/web-series.html" class="cat-btn">Web Series</a>
+        <a href="/gujarati.html" class="cat-btn">Gujarati</a>
+        <a href="/marathi.html" class="cat-btn">Marathi</a>
+        <a href="/bengali.html" class="cat-btn">Bengali</a>
+        <a href="/punjabi.html" class="cat-btn">Punjabi</a>
+        </div>
+    </div>
+</header>
+
+<main class="post-container" style="display:block;">
+    
+    <div class="home-container" id="searchResults" style="display:none; padding:0; margin:0; width:100%;"></div>
+    <div id="originalContent" style="width:100%;">
+        <img loading="lazy" src="https://i.ibb.co/k2sbvpD6/temp-vega-image.jpg" style="max-width:100%; height:auto; display:block; margin:0 auto;"/>
+<h1 style="text-align: left; font-family: sans-serif; padding: 15px 10px 5px 10px; margin: 0;">
+Cobra Kai (Season 1 – 6) Dual Audio {Hindi-English} NetFlix-Series 480p | 720p | 1080p WEB-DL
+</h1>
+<div class="entry-content" style="font-family: sans-serif; line-height: 1.6; padding: 10px; font-size: 17px;">
+<main class="page-body">
+<p>
+✅ Download <strong>Cobra Kai (Season 1 – 6)</strong> Complete Web Series
+and available in
+<span style="color: #FFA500;"><strong>480p</strong></span> &amp; <span style="color: #FFA500;"><strong>720p</strong></span> &amp; <span style="color: #FFA500;"><strong>1080p</strong></span>.
+This is based on
+<span style="color: #FFA500;"><strong>Action, Drama</strong></span>
+and available in
+<span style="color: #ff0000;"><strong>Hindi DD5.1 + English [DUAL AUDIO SERIES].</strong></span>
+</p>
+<p style="text-align: center;">
+<strong>🎬 Your Ultimate Destination for Fast, Secure Movie Downloads! 🎬</strong><br/>
+
+At <a href="/"><strong><span style="color: #ffff00;">Movies Zone 🍿</span></strong></a>,
+Dive into the world of High-Speed
+<strong><span style="color: #ffff00;">Hollywood</span></strong>
+and
+<span style="color: #ffff00;"><strong>Bollywood</strong></span>
+movie downloads with hassle-free, direct
+<span style="color: #00ccff;"><strong>Google Drive (G-Drive)</strong></span>
+links.
+
+Enjoy blazing-fast downloads,
+Rock Solid security, and zero waiting time!
+</p>
+<h3 style="text-align: center;">
+Download Cobra Kai (Season 1 – 6) Complete Web Series
+480p 720p 1080p ~ Movies Zone 🍿
+</h3>
+<h3>
+<strong>
+<span style="color:yellow;">Movie/Series Info:</span>
+</strong>
+</h3>
+<p>
+<strong>
+<a href="https://www.imdb.com/title/tt7221388/">
+<span style="color:#00ff1c;">IMDb Rating:- 8.5/10</span>
+</a>
+</strong><br/>
+<strong>Name: </strong>Cobra Kai (Season 1 – 6)<br/>
+<strong>Language: </strong>Hindi DD5.1 + English [DUAL AUDIO SERIES]<br/>
+<strong>Released Year: </strong>2018 – 2025<br/>
+<strong>Quality: </strong>
+480p || 720p || 1080p –
+<span style="color: #ff0000;">
+<strong>WEB-DL</strong>
+</span><br/>
+<strong>Size: </strong>
+140MB/E || 400MB/E || 1.1GB/E || 130MB/E || 1.8GB/E || 310MB/E<br/>
+<strong>Format: </strong>MKV
+</p>
+<h4 style="text-align: center;">
+: synopsis/PLOT :
+</h4>
+<p>“COBRA KAI: FINAL SEASON” – A Netflix Original American Martial Arts Action Comedy Drama Series – (S6P1) This Karate Kid sequel series picks up 30 years after the events of the 1984 All Valley Karate Tournament and finds Johnny Lawrence on the hunt for redemption by reopening the infamous Cobra Kai karate dojo. This reignites his old rivalry with the successful Daniel LaRusso, who has been working to maintain the balance in his life without mentor Mr. Miyagi.</p>
+<h4 style="text-align: center;">
+<span style="font-family: 'comic sans ms', sans-serif; color: #ff9900;">
+<strong>: SCREENSHOTS :</strong>
+</span>
+</h4>
+<p style="text-align: center;"><img loading="lazy" src="https://i.ibb.co/S4wgP462/temp-vega-image.jpg"/></p>
+<p style="text-align: center;"><img loading="lazy" src="https://i.ibb.co/TMBWL9Hh/temp-vega-image.jpg"/></p>
+<p style="text-align: center;"><img loading="lazy" src="https://i.ibb.co/m5pw0nXr/temp-vega-image.jpg"/></p>
+<p style="text-align: center;"><img loading="lazy" src="https://i.ibb.co/DD9SkxH8/temp-vega-image.jpg"/></p>
+<p style="text-align: center;"><img loading="lazy" src="https://i.ibb.co/67xW29DB/temp-vega-image.jpg"/></p>
+<p style="text-align: center;"><img loading="lazy" src="https://i.ibb.co/8LTLmKzY/temp-vega-image.jpg"/></p>
+<p style="text-align: center;"><img loading="lazy" src="https://i.ibb.co/twPmX9xF/temp-vega-image.jpg"/></p>
+<p style="text-align: center;"><img loading="lazy" src="https://i.ibb.co/jk5LnSq5/temp-vega-image.jpg"/></p>
+<p style="text-align: center;"><img loading="lazy" src="https://i.ibb.co/jP4n7mSn/temp-vega-image.jpg"/></p>
+<p style="text-align: center;"><img loading="lazy" src="https://i.ibb.co/Ps5d5XN3/temp-vega-image.jpg"/></p>
+<hr/>
+<h5 style="text-align: center;">Season 6 PART 03 <span style="color:orange;">{Hindi-English}</span> 480p WEB-DL x264 [140MB/E]</h5>
+<div style="text-align: center;">
+<details style="margin: 10px auto; text-align: center; border: none;">
+<summary class="btn btn-sm btn-outline" style="list-style: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; cursor: pointer; padding: 10px 20px; border-radius: 5px; outline: none;">
+<span style="font-family: georgia; font-size: large; font-weight: bold;">
+      ⚡ V-Cloud [Episodes]
+    </span>
+</summary>
+<div style="margin-top: 15px; padding: 10px; text-align: center;">
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 1:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/etm0ci1ojrremst" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 2:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/laaavbvhmullvyy" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 3:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/1dowapaueo0waz1" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 4:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/irdw_prilic0dd8" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 5:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/vbjph9ypcpbfett" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+</div>
+</details>
+<a href="https://vcloud.beer/ngq-sks017vddlt" rel="nofollow noopener noreferrer" style="margin: 0 5px;" target="_blank">
+<button class="btn btn-sm btn-outline" style="background: linear-gradient(135deg,#2ea1cf,#ff19d0); color: white; margin-bottom: 5px;">
+<span style="font-family: georgia; font-size: large;">⚡ Batch/Zip</span>
+</button>
+</a>
+</div>
+<hr/>
+<h5 style="text-align: center;">Season 6 PART 03 <span style="color:orange;">{Hindi-English}</span> 720p WEB-DL x264 [400MB/E]</h5>
+<div style="text-align: center;">
+<details style="margin: 10px auto; text-align: center; border: none;">
+<summary class="btn btn-sm btn-outline" style="list-style: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; cursor: pointer; padding: 10px 20px; border-radius: 5px; outline: none;">
+<span style="font-family: georgia; font-size: large; font-weight: bold;">
+      ⚡ V-Cloud [Episodes]
+    </span>
+</summary>
+<div style="margin-top: 15px; padding: 10px; text-align: center;">
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 1:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/rt1zirgmdosrs1g" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 2:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/5ch1snegjzig0ju" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 3:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/aa9s7qhja1qpazh" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 4:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/bwe3henjt83aswh" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 5:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/ebtk6o6v1euvbt6" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+</div>
+</details>
+<a href="https://vcloud.beer/j1ki88qq2unasj8" rel="nofollow noopener noreferrer" style="margin: 0 5px;" target="_blank">
+<button class="btn btn-sm btn-outline" style="background: linear-gradient(135deg,#2ea1cf,#ff19d0); color: white; margin-bottom: 5px;">
+<span style="font-family: georgia; font-size: large;">⚡ Batch/Zip</span>
+</button>
+</a>
+</div>
+<hr/>
+<h5 style="text-align: center;">Season 6 PART 03 <span style="color:orange;">{Hindi-English}</span> 1080p WEB-DL x264 [1.1GB/E]</h5>
+<div style="text-align: center;">
+<details style="margin: 10px auto; text-align: center; border: none;">
+<summary class="btn btn-sm btn-outline" style="list-style: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; cursor: pointer; padding: 10px 20px; border-radius: 5px; outline: none;">
+<span style="font-family: georgia; font-size: large; font-weight: bold;">
+      ⚡ V-Cloud [Episodes]
+    </span>
+</summary>
+<div style="margin-top: 15px; padding: 10px; text-align: center;">
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 1:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/kd-9gulya6u9las" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 2:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/uj51uy1z9ri1s5v" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 3:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/1tdpsts3_buhm6m" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 4:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/1oxkpu9gqxrhxp2" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 5:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/1qp1keeeturn1oc" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+</div>
+</details>
+<a href="https://vcloud.beer/mnmmntxq8-stygx" rel="nofollow noopener noreferrer" style="margin: 0 5px;" target="_blank">
+<button class="btn btn-sm btn-outline" style="background: linear-gradient(135deg,#2ea1cf,#ff19d0); color: white; margin-bottom: 5px;">
+<span style="font-family: georgia; font-size: large;">⚡ Batch/Zip</span>
+</button>
+</a>
+</div>
+<hr/>
+<h5 style='font-family: "Times New Roman"; font-size: 17px; text-align: center;'><span style="color: red; font-family: times; font-size: medium;"><i>-:Season 6 PART 01:-</i></span></h5>
+<hr/>
+<h5 style="text-align: center;">Season 6 PART 02 <span style="color:orange;">{Hindi-English}</span> 480p WEB-DL x264 [130MB/E]</h5>
+<div style="text-align: center;">
+<details style="margin: 10px auto; text-align: center; border: none;">
+<summary class="btn btn-sm btn-outline" style="list-style: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; cursor: pointer; padding: 10px 20px; border-radius: 5px; outline: none;">
+<span style="font-family: georgia; font-size: large; font-weight: bold;">
+      ⚡ V-Cloud [Episodes]
+    </span>
+</summary>
+<div style="margin-top: 15px; padding: 10px; text-align: center;">
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 1:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/at55xun3gntnaow" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 2:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/pifd5yodlpiadyh" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 3:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/lxza0qs0sim7mak" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 4:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/2_8hmihjkoodhgi" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 5:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/zjkrr3emluz3xe5" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+</div>
+</details>
+<a href="https://vcloud.beer/ccjfu0ffh8hh9t9" rel="nofollow noopener noreferrer" style="margin: 0 5px;" target="_blank">
+<button class="btn btn-sm btn-outline" style="background: linear-gradient(135deg,#2ea1cf,#ff19d0); color: white; margin-bottom: 5px;">
+<span style="font-family: georgia; font-size: large;">⚡ Batch/Zip</span>
+</button>
+</a>
+</div>
+<hr/>
+<h5 style="text-align: center;">Season 6 PART 02 <span style="color:orange;">{Hindi-English}</span> 720p WEB-DL x264 [400MB/E]</h5>
+<div style="text-align: center;">
+<details style="margin: 10px auto; text-align: center; border: none;">
+<summary class="btn btn-sm btn-outline" style="list-style: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; cursor: pointer; padding: 10px 20px; border-radius: 5px; outline: none;">
+<span style="font-family: georgia; font-size: large; font-weight: bold;">
+      ⚡ V-Cloud [Episodes]
+    </span>
+</summary>
+<div style="margin-top: 15px; padding: 10px; text-align: center;">
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 1:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/kmrtt4838pcycl4" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 2:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/ywronyqbs1vccw7" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 3:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/jb_8zjj8cjc7jf_" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 4:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/bbfapm26lwa6gbf" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 5:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/kktqkvaaqy3qwvb" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+</div>
+</details>
+<a href="https://vcloud.beer/gr_romlpqv96wpo" rel="nofollow noopener noreferrer" style="margin: 0 5px;" target="_blank">
+<button class="btn btn-sm btn-outline" style="background: linear-gradient(135deg,#2ea1cf,#ff19d0); color: white; margin-bottom: 5px;">
+<span style="font-family: georgia; font-size: large;">⚡ Batch/Zip</span>
+</button>
+</a>
+</div>
+<hr/>
+<h5 style="text-align: center;">Season 6 PART 02 <span style="color:orange;">{Hindi-English}</span> 1080p WEB-DL H.264 [1.8GB/E]</h5>
+<div style="text-align: center;">
+<details style="margin: 10px auto; text-align: center; border: none;">
+<summary class="btn btn-sm btn-outline" style="list-style: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; cursor: pointer; padding: 10px 20px; border-radius: 5px; outline: none;">
+<span style="font-family: georgia; font-size: large; font-weight: bold;">
+      ⚡ V-Cloud [Episodes]
+    </span>
+</summary>
+<div style="margin-top: 15px; padding: 10px; text-align: center;">
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 1:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/xrw4wh12nqtp4ny" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 2:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/hhfe2yaqfbhqn2a" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 3:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/gg9zdfxkewwoify" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 4:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/9jnay16_aj_y1y_" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 5:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/jcopm41cm5ap1kf" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+</div>
+</details>
+<a href="https://vcloud.beer/xxpwzjgalfy22jy" rel="nofollow noopener noreferrer" style="margin: 0 5px;" target="_blank">
+<button class="btn btn-sm btn-outline" style="background: linear-gradient(135deg,#2ea1cf,#ff19d0); color: white; margin-bottom: 5px;">
+<span style="font-family: georgia; font-size: large;">⚡ Batch/Zip</span>
+</button>
+</a>
+</div>
+<hr/>
+<h5 style='font-family: "Times New Roman"; font-size: 17px; text-align: center;'><span style="color: red; font-family: times; font-size: medium;"><i>-:Season 6 PART 01:-</i></span></h5>
+<hr/>
+<h5 style="text-align: center;">Season 6 PART 01 <span style="color:orange;">{Hindi-English}</span> 480p WEB-DL x264 [140MB/E]</h5>
+<div style="text-align: center;">
+<details style="margin: 10px auto; text-align: center; border: none;">
+<summary class="btn btn-sm btn-outline" style="list-style: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; cursor: pointer; padding: 10px 20px; border-radius: 5px; outline: none;">
+<span style="font-family: georgia; font-size: large; font-weight: bold;">
+      ⚡ V-Cloud [Episodes]
+    </span>
+</summary>
+<div style="margin-top: 15px; padding: 10px; text-align: center;">
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 1:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/qyrrlw8yedyg8fs" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 2:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/tsxs2sxz8t_vsh2" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 3:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/em6xexwbu91wfpe" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 4:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/4i8igi4_b1mztmt" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 5:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/s_y6gsj0ic1aoj3" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+</div>
+</details>
+<a href="https://vcloud.beer/99z16bebp1z1jr1" rel="nofollow noopener noreferrer" style="margin: 0 5px;" target="_blank">
+<button class="btn btn-sm btn-outline" style="background: linear-gradient(135deg,#2ea1cf,#ff19d0); color: white; margin-bottom: 5px;">
+<span style="font-family: georgia; font-size: large;">⚡ Batch/Zip</span>
+</button>
+</a>
+</div>
+<hr/>
+<h5 style="text-align: center;">Season 6 PART 01 <span style="color:orange;">{Hindi-English}</span> 720p WEB-DL x264 [310MB/E]</h5>
+<div style="text-align: center;">
+<details style="margin: 10px auto; text-align: center; border: none;">
+<summary class="btn btn-sm btn-outline" style="list-style: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; cursor: pointer; padding: 10px 20px; border-radius: 5px; outline: none;">
+<span style="font-family: georgia; font-size: large; font-weight: bold;">
+      ⚡ V-Cloud [Episodes]
+    </span>
+</summary>
+<div style="margin-top: 15px; padding: 10px; text-align: center;">
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 1:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/jzewsn9f7pe2r3f" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 2:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/whqq-7qcvwpqu1-" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 3:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/hkhz86--81d-lpp" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 4:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/lnb22eaftby55ze" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 5:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/eexy0xm9vw99y-v" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+</div>
+</details>
+<a href="https://vcloud.beer/hpqohrcsy38fsiq" rel="nofollow noopener noreferrer" style="margin: 0 5px;" target="_blank">
+<button class="btn btn-sm btn-outline" style="background: linear-gradient(135deg,#2ea1cf,#ff19d0); color: white; margin-bottom: 5px;">
+<span style="font-family: georgia; font-size: large;">⚡ Batch/Zip</span>
+</button>
+</a>
+</div>
+<hr/>
+<h5 style="text-align: center;">Season 6 PART 01 <span style="color:orange;">{Hindi-English}</span> 1080p WEB-DL H.264 [1.8GB/E]</h5>
+<div style="text-align: center;">
+<details style="margin: 10px auto; text-align: center; border: none;">
+<summary class="btn btn-sm btn-outline" style="list-style: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; cursor: pointer; padding: 10px 20px; border-radius: 5px; outline: none;">
+<span style="font-family: georgia; font-size: large; font-weight: bold;">
+      ⚡ V-Cloud [Episodes]
+    </span>
+</summary>
+<div style="margin-top: 15px; padding: 10px; text-align: center;">
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 1:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/y8tswjrhymyuyhk" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 2:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/rgqonodho7stqhd" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 3:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/tngn0b-qqki1f_r" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 4:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/sltk1stxlgtdj99" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 5:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/w6ep61bnnwestda" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+</div>
+</details>
+<a href="https://vcloud.beer/agclx31uannn455" rel="nofollow noopener noreferrer" style="margin: 0 5px;" target="_blank">
+<button class="btn btn-sm btn-outline" style="background: linear-gradient(135deg,#2ea1cf,#ff19d0); color: white; margin-bottom: 5px;">
+<span style="font-family: georgia; font-size: large;">⚡ Batch/Zip</span>
+</button>
+</a>
+</div>
+<hr/>
+<h5 style='font-family: "Times New Roman"; font-size: 17px; text-align: center;'><span style="color: red; font-family: times; font-size: medium;"><i>-:Season 5:-</i></span></h5>
+<hr/>
+<h5 style="text-align: center;">Cobra Kai <span style="color:orange;">{Season 5}</span> Single Episodes 480p WEB-DL [200MB/E]</h5>
+<div style="text-align: center;">
+<details style="margin: 10px auto; text-align: center; border: none;">
+<summary class="btn btn-sm btn-outline" style="list-style: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; cursor: pointer; padding: 10px 20px; border-radius: 5px; outline: none;">
+<span style="font-family: georgia; font-size: large; font-weight: bold;">
+      ⚡ V-Cloud [Episodes]
+    </span>
+</summary>
+<div style="margin-top: 15px; padding: 10px; text-align: center;">
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 1:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/vikwvlzgf8sifjk" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 2:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/gyhwfgnfgnll1i1" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 3:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/cpqj0mjcefu5jsh" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 4:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/h8vdehirhhhidip" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 5:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/bukfr21rcgg1yib" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 6:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/xp35wzpkp9zz5pp" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 7:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/zb-zvu1aa3vabqv" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 8:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/ysq1qx5v5ymmh0-" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 9:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/w18l21rnjublozo" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 10:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/dtmvnjdh5srrx-c" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+</div>
+</details>
+<a href="https://vcloud.beer/o0byrlotr1bkooy" rel="nofollow noopener noreferrer" style="margin: 0 5px;" target="_blank">
+<button class="btn btn-sm btn-outline" style="background: linear-gradient(135deg,#2ea1cf,#ff19d0); color: white; margin-bottom: 5px;">
+<span style="font-family: georgia; font-size: large;">⚡ Batch/Zip</span>
+</button>
+</a>
+</div>
+<hr/>
+<h5 style="text-align: center;">Cobra Kai <span style="color:orange;">{Season 5}</span> Single Episodes 720p WEB-DL [350MB/E]</h5>
+<div style="text-align: center;">
+<details style="margin: 10px auto; text-align: center; border: none;">
+<summary class="btn btn-sm btn-outline" style="list-style: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; cursor: pointer; padding: 10px 20px; border-radius: 5px; outline: none;">
+<span style="font-family: georgia; font-size: large; font-weight: bold;">
+      ⚡ V-Cloud [Episodes]
+    </span>
+</summary>
+<div style="margin-top: 15px; padding: 10px; text-align: center;">
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 1:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/y-rrqa6ywl613nb" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 2:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/mahzputapskksts" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 3:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/7bztbmy-bbb3z16" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 4:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/118xfnc5bgwirr7" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 5:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/zt61ixcncz2mcxu" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 6:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/11rqinnyttnxfug" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 7:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/6bcz2a1lh24rceh" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 8:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/n11e6e64fkn16_6" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 9:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/f17fjdqf8n2uj11" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 10:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/voufwkza8zzn6gb" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+</div>
+</details>
+<a href="https://vcloud.beer/6w3brcy60iirddw" rel="nofollow noopener noreferrer" style="margin: 0 5px;" target="_blank">
+<button class="btn btn-sm btn-outline" style="background: linear-gradient(135deg,#2ea1cf,#ff19d0); color: white; margin-bottom: 5px;">
+<span style="font-family: georgia; font-size: large;">⚡ Batch/Zip</span>
+</button>
+</a>
+</div>
+<hr/>
+<h5 style="text-align: center;">Cobra Kai <span style="color:orange;">{Season 5}</span> Single Episodes 1080p WEB-DL [2GB/E]</h5>
+<div style="text-align: center;">
+<a href="https://movies8899.pages.dev/web_links1/web_links7/nexdrive_pro_genxfm784776233176_" rel="nofollow noopener noreferrer" style="margin: 0 5px;" target="_blank">
+<button class="btn btn-sm btn-outline" style="background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; margin-bottom: 5px;">
+<span style="font-family: georgia; font-size: large;">⚡ V-Cloud [Resumable]</span>
+</button>
+</a>
+<a href="https://vcloud.beer/hb1ttbhfbn43sti" rel="nofollow noopener noreferrer" style="margin: 0 5px;" target="_blank">
+<button class="btn btn-sm btn-outline" style="background: linear-gradient(135deg,#2ea1cf,#ff19d0); color: white; margin-bottom: 5px;">
+<span style="font-family: georgia; font-size: large;">⚡ Batch/Zip</span>
+</button>
+</a>
+</div>
+<hr/>
+<h5 style='font-family: "Times New Roman"; font-size: 17px; text-align: center;'><span style="color: red; font-family: times; font-size: medium;"><i>-:Season 4:-</i></span></h5>
+<hr/>
+<h5 style="text-align: center;">Cobra Kai <span style="color:orange;">{Season 4}</span> Single Episodes 480p [150MB]</h5>
+<div style="text-align: center;">
+<details style="margin: 10px auto; text-align: center; border: none;">
+<summary class="btn btn-sm btn-outline" style="list-style: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; cursor: pointer; padding: 10px 20px; border-radius: 5px; outline: none;">
+<span style="font-family: georgia; font-size: large; font-weight: bold;">
+      ⚡ V-Cloud [Episodes]
+    </span>
+</summary>
+<div style="margin-top: 15px; padding: 10px; text-align: center;">
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 1:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/54cpyo54adda09r" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 2:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/xpdjcliuu2z9l3l" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 3:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/14ifyf1erz-u-gu" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 4:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/omixaswmdiqw1gw" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 5:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/f0pu6chvunah1wp" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 6:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/9rppfdttarxxcfd" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 7:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/dhc1cu01r_vvskv" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 8:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/vh22aprmrnrd3cr" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 9:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/mwyy4epu1yatnwt" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 10:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/qse8limqkd6qiwq" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+</div>
+</details>
+<a href="https://vcloud.beer/quefqfmf_xjbjvv" rel="nofollow noopener noreferrer" style="margin: 0 5px;" target="_blank">
+<button class="btn btn-sm btn-outline" style="background: linear-gradient(135deg,#2ea1cf,#ff19d0); color: white; margin-bottom: 5px;">
+<span style="font-family: georgia; font-size: large;">⚡ Batch/Zip</span>
+</button>
+</a>
+</div>
+<hr/>
+<h5 style="text-align: center;">Cobra Kai <span style="color:orange;">{Season 4}</span> Single Episodes 720p [300MB]</h5>
+<div style="text-align: center;">
+<details style="margin: 10px auto; text-align: center; border: none;">
+<summary class="btn btn-sm btn-outline" style="list-style: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; cursor: pointer; padding: 10px 20px; border-radius: 5px; outline: none;">
+<span style="font-family: georgia; font-size: large; font-weight: bold;">
+      ⚡ V-Cloud [Episodes]
+    </span>
+</summary>
+<div style="margin-top: 15px; padding: 10px; text-align: center;">
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 1:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/xagee_37_qxzgjx" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 2:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/k8rdv9g8bp8osvs" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 3:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/cmnra8hnndhd8ec" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 4:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/4fv0lf9-9dw2fwf" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 5:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/e--zrookf-5z5rb" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 6:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/orb1ijoiojbd0r1" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 7:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/96g8qbpy6o9u89g" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 8:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/dybahc10pf1y1cb" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 9:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/hhtrzkudeahuot1" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 10:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/p64eokek1pe1u93" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+</div>
+</details>
+<a href="https://vcloud.beer/110ibxbt11hlttb" rel="nofollow noopener noreferrer" style="margin: 0 5px;" target="_blank">
+<button class="btn btn-sm btn-outline" style="background: linear-gradient(135deg,#2ea1cf,#ff19d0); color: white; margin-bottom: 5px;">
+<span style="font-family: georgia; font-size: large;">⚡ Batch/Zip</span>
+</button>
+</a>
+</div>
+<hr/>
+<h5 style="text-align: center;">Cobra Kai <span style="color:orange;">{Season 4}</span> Single Episodes 1080p [2GB]</h5>
+<div style="text-align: center;">
+<a href="https://vcloud.beer/ies_yqnnzzernpq" rel="nofollow noopener noreferrer" style="margin: 0 5px;" target="_blank">
+<button class="btn btn-sm btn-outline" style="background: linear-gradient(135deg,#2ea1cf,#ff19d0); color: white; margin-bottom: 5px;">
+<span style="font-family: georgia; font-size: large;">⚡ Batch/Zip</span>
+</button>
+</a>
+</div>
+<hr/>
+<h5 style='font-family: "Times New Roman"; font-size: 17px; text-align: center;'><span style="color: red; font-family: times; font-size: medium;"><i>-:Season 3:-</i></span></h5>
+<hr/>
+<h5 style="text-align: center;">Cobra Kai <span style="color:orange;">{Season 3}</span> Single Episodes 480p [100MB/E]</h5>
+<div style="text-align: center;">
+<details style="margin: 10px auto; text-align: center; border: none;">
+<summary class="btn btn-sm btn-outline" style="list-style: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; cursor: pointer; padding: 10px 20px; border-radius: 5px; outline: none;">
+<span style="font-family: georgia; font-size: large; font-weight: bold;">
+      ⚡ V-Cloud [Episodes]
+    </span>
+</summary>
+<div style="margin-top: 15px; padding: 10px; text-align: center;">
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 1:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/9-02fovogd1gig_" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 2:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/k7wnytl44bdgabq" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 3:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/mgqnnymlq3eels7" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 4:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/yfb1yfnkwsikzri" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 5:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/6fsk5tm1uv1xuku" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 6:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/rt1op9ro-oaqpyh" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 7:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/rztumxjwyjsmnm-" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 8:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/ffpewftrwk8zfne" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 9:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/c1nf7cc39zjicif" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 10:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/w7lgi_iqv_r_mj_" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+</div>
+</details>
+<a href="https://vcloud.beer/gj11wtfelgt_wes" rel="nofollow noopener noreferrer" style="margin: 0 5px;" target="_blank">
+<button class="btn btn-sm btn-outline" style="background: linear-gradient(135deg,#2ea1cf,#ff19d0); color: white; margin-bottom: 5px;">
+<span style="font-family: georgia; font-size: large;">⚡ Batch/Zip</span>
+</button>
+</a>
+</div>
+<hr/>
+<h5 style="text-align: center;">Cobra Kai <span style="color:orange;">{Season 3}</span> Single Episodes 720p [250MB/E]</h5>
+<div style="text-align: center;">
+<details style="margin: 10px auto; text-align: center; border: none;">
+<summary class="btn btn-sm btn-outline" style="list-style: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; cursor: pointer; padding: 10px 20px; border-radius: 5px; outline: none;">
+<span style="font-family: georgia; font-size: large; font-weight: bold;">
+      ⚡ V-Cloud [Episodes]
+    </span>
+</summary>
+<div style="margin-top: 15px; padding: 10px; text-align: center;">
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 1:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/mfem0tffkl4fl5f" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 2:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/chmut1chzrrpyr_" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 3:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/tn5tssbpf277gi2" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 4:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/mdwoxh9n1j010ln" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 5:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/ud11h4rsm44dwdo" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 6:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/clz-ubsxdiidkiu" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 7:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/ss18000d-x7vv11" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 8:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/a_s4imw3iemmoi1" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 9:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/zze7gpzerzffztz" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 10:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/x_pg7gagiuugh7r" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+</div>
+</details>
+<a href="https://vcloud.beer/34scssne0ssnexh" rel="nofollow noopener noreferrer" style="margin: 0 5px;" target="_blank">
+<button class="btn btn-sm btn-outline" style="background: linear-gradient(135deg,#2ea1cf,#ff19d0); color: white; margin-bottom: 5px;">
+<span style="font-family: georgia; font-size: large;">⚡ Batch/Zip</span>
+</button>
+</a>
+</div>
+<hr/>
+<h5 style='font-family: "Times New Roman"; font-size: 17px; text-align: center;'><span style="color: red; font-family: times; font-size: medium;"><i>-:Season 2:-</i></span></h5>
+<hr/>
+<h5 style="text-align: center;">Cobra Kai <span style="color:orange;">{Season 02}</span> Single Episodes 480p [100MB/E]</h5>
+<div style="text-align: center;">
+<details style="margin: 10px auto; text-align: center; border: none;">
+<summary class="btn btn-sm btn-outline" style="list-style: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; cursor: pointer; padding: 10px 20px; border-radius: 5px; outline: none;">
+<span style="font-family: georgia; font-size: large; font-weight: bold;">
+      ⚡ V-Cloud [Episodes]
+    </span>
+</summary>
+<div style="margin-top: 15px; padding: 10px; text-align: center;">
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 1:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/txkvugnmrtksdkd" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 2:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/yyfks_rofsfkhof" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 3:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/14kns1adpscn1nx" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 4:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/pi2jucjl8alk3pl" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 5:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/50qfjbwrqcnri8c" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 6:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/rlqrrwoknkk3rfb" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 7:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/xxvpjxl5s5cs5sv" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 8:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/3vg336hffayv1nf" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 9:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/mi1v0040o30kmjb" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 10:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/theg6u51qf24afh" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+</div>
+</details>
+<a href="https://vcloud.beer/2nuqt_9yp2kyzow" rel="nofollow noopener noreferrer" style="margin: 0 5px;" target="_blank">
+<button class="btn btn-sm btn-outline" style="background: linear-gradient(135deg,#2ea1cf,#ff19d0); color: white; margin-bottom: 5px;">
+<span style="font-family: georgia; font-size: large;">⚡ Batch/Zip</span>
+</button>
+</a>
+</div>
+<hr/>
+<h5 style="text-align: center;">Cobra Kai <span style="color:orange;">{Season 02}</span> Single Episodes 720p [250MB/E]</h5>
+<div style="text-align: center;">
+<details style="margin: 10px auto; text-align: center; border: none;">
+<summary class="btn btn-sm btn-outline" style="list-style: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; cursor: pointer; padding: 10px 20px; border-radius: 5px; outline: none;">
+<span style="font-family: georgia; font-size: large; font-weight: bold;">
+      ⚡ V-Cloud [Episodes]
+    </span>
+</summary>
+<div style="margin-top: 15px; padding: 10px; text-align: center;">
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 1:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/6-8ouf8ub0amsi6" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 2:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/alw8jlkpuno13l3" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 3:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/zrtdagrajkqg93t" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 4:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/aa9w4a5a-w2-55a" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 5:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/kr6muxxgr8hggwr" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 6:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/vokbdvq87xkvfvf" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 7:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/lp-llltr3dhk-nr" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 8:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/2_2_e52_edfn__o" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 9:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/m3exk3prgrjkspg" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 10:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/jgegglils3eixnl" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+</div>
+</details>
+<a href="https://vcloud.beer/mbdgpmbvduohgui" rel="nofollow noopener noreferrer" style="margin: 0 5px;" target="_blank">
+<button class="btn btn-sm btn-outline" style="background: linear-gradient(135deg,#2ea1cf,#ff19d0); color: white; margin-bottom: 5px;">
+<span style="font-family: georgia; font-size: large;">⚡ Batch/Zip</span>
+</button>
+</a>
+</div>
+<hr/>
+<h5 style='font-family: "Times New Roman"; font-size: 17px; text-align: center;'><span style="color: red; font-family: times; font-size: medium;"><i>-:Season 1:-</i></span></h5>
+<hr/>
+<h5 style="text-align: center;">Cobra Kai <span style="color:orange;">{Season 1}</span> Single Episodes 480p [100MB/E]</h5>
+<div style="text-align: center;">
+<details style="margin: 10px auto; text-align: center; border: none;">
+<summary class="btn btn-sm btn-outline" style="list-style: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; cursor: pointer; padding: 10px 20px; border-radius: 5px; outline: none;">
+<span style="font-family: georgia; font-size: large; font-weight: bold;">
+      ⚡ V-Cloud [Episodes]
+    </span>
+</summary>
+<div style="margin-top: 15px; padding: 10px; text-align: center;">
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 1:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/lvhp3txxddbjgdw" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 2:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/-8cpnmcrqgf114-" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 3:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/spmbmlp7rerg1if" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 4:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/y_r_z-_bcx-3rgq" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 5:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/r5f5v5k3o55f_or" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 6:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/idqdizmcnpinnhh" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 7:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/tkm68t5rkufoiqo" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 8:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/kn5o5nk5h01nkgy" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 9:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/gvskoji6eeha6gh" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 10:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/yqzcwrcs88tz-v-" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+</div>
+</details>
+<a href="https://vcloud.beer/98umgww-0xxl9l1" rel="nofollow noopener noreferrer" style="margin: 0 5px;" target="_blank">
+<button class="btn btn-sm btn-outline" style="background: linear-gradient(135deg,#2ea1cf,#ff19d0); color: white; margin-bottom: 5px;">
+<span style="font-family: georgia; font-size: large;">⚡ Batch/Zip</span>
+</button>
+</a>
+</div>
+<hr/>
+<h5 style="text-align: center;">Cobra Kai <span style="color:orange;">{Season 1}</span> Single Episodes 720p [300MB/E]</h5>
+<div style="text-align: center;">
+<details style="margin: 10px auto; text-align: center; border: none;">
+<summary class="btn btn-sm btn-outline" style="list-style: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; cursor: pointer; padding: 10px 20px; border-radius: 5px; outline: none;">
+<span style="font-family: georgia; font-size: large; font-weight: bold;">
+      ⚡ V-Cloud [Episodes]
+    </span>
+</summary>
+<div style="margin-top: 15px; padding: 10px; text-align: center;">
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 1:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/llnnwz1fudb77qb" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 2:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/p_ipicgyg_poic4" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 3:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/peopdbf_ohjdyv3" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 4:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/ytavwweajccw1a1" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 5:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/e7dgm1mgggutj6a" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 6:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/hnvhnqqm_jliqql" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 7:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/_q_ehdwulkunrxj" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 8:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/uh8w1kztw8tx0j8" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 9:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/17x8iw8z9hi6l83" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+<hr/>
+<div style="margin-bottom: 15px;">
+<p style="color: purple; font-weight: bold; margin-bottom: 5px; font-family: georgia;">-:Episodes: 10:-</p>
+<a class="btn btn-sm btn-outline" href="https://vcloud.beer/g8s-2ps82gyxqqy" rel="nofollow noopener noreferrer" style="text-decoration: none; display: inline-block; background: linear-gradient(135deg, rgb(237, 11, 11), rgb(242, 209, 82)); color: black; padding: 5px 15px; border-radius: 3px;" target="_blank">
+<span style="font-family: georgia; font-size: large;">
+          ⚡ V-Cloud [Resumable]
+        </span>
+</a>
+</div>
+</div>
+</details>
+<a href="https://vcloud.beer/dob8gdoygpipwtm" rel="nofollow noopener noreferrer" style="margin: 0 5px;" target="_blank">
+<button class="btn btn-sm btn-outline" style="background: linear-gradient(135deg,#2ea1cf,#ff19d0); color: white; margin-bottom: 5px;">
+<span style="font-family: georgia; font-size: large;">⚡ Batch/Zip</span>
+</button>
+</a>
+</div>
+<hr/>
+</main>
+</div>
+<h2 style="text-align: center; margin-top: 10px;">
+<div class="separator" style="clear: both;">
+<a href="https://t.me/moviesrequest044" rel="noopener noreferrer" style="background-image: linear-gradient(45deg, rgb(156, 39, 176), rgb(233, 30, 99)); border-radius: 10px; border: 2px solid black; color: white; display: inline-block; font-size: 18px; padding: 10px 20px; text-decoration: none;" target="_blank">
+<span style="font-family: georgia;">
+💫 Join Telegram 💫
+</span>
+</a>
+</div>
+</h2>
+<h2 style="text-align: center;">
+<span style="font-size: large;">
+Thank you for visit.❤️
+</span>
+</h2>
+    </div>
+</main>
+
+<footer class="site-footer">© 2026 Movies Zone | All Rights Reserved</footer>
+
+<script>
+const sidebar = document.getElementById('sidebar');
+const overlay = document.getElementById('sidebarOverlay');
+const openBtn = document.getElementById('openSidebar');
+const closeBtn = document.getElementById('closeSidebar');
+function openMenu() { sidebar.classList.add('active'); overlay.classList.add('active'); }
+function closeMenu() { sidebar.classList.remove('active'); overlay.classList.remove('active'); }
+openBtn.addEventListener('click', openMenu);
+closeBtn.addEventListener('click', closeMenu);
+overlay.addEventListener('click', closeMenu);
+
+const accHeaders = document.querySelectorAll('.accordion-header');
+accHeaders.forEach(header => {
+    header.addEventListener('click', function() {
+        this.classList.toggle('active');
+        const body = this.nextElementSibling;
+        if (body.style.maxHeight) { body.style.maxHeight = null; } 
+        else { body.style.maxHeight = body.scrollHeight + "px"; }
+    });
+});
+
+let movieData = [];
+async function loadSearchData() { 
+    try { const res = await fetch('/search_data.json'); movieData = await res.json(); } 
+    catch(e) { console.error("Error loading search data", e); }
+}
+loadSearchData();
+const input = document.getElementById("searchInput");
+const searchBtn = document.getElementById("searchBtn");
+const searchResults = document.getElementById("searchResults");
+const originalContent = document.getElementById("originalContent");
+const paginationWrapper = document.getElementById("paginationWrapper");
+
+function performSearch() {
+    if(!originalContent) return;
+    const val = input.value.toLowerCase().trim();
+    if (val.length < 2) { 
+        searchResults.style.display = "none";
+        originalContent.style.display = "block";
+        if (paginationWrapper) paginationWrapper.style.display = "flex";
+        return; 
+    }
+    const searchWords = val.split(/\\s+/); 
+    const res = movieData.filter(m => {
+        const titleLower = m.t.toLowerCase();
+        return searchWords.every(word => titleLower.includes(word));
+    });
+    
+    originalContent.style.display="none";
+    if (paginationWrapper) paginationWrapper.style.display = "none";
+    searchResults.style.display = "grid";
+    
+    if (res.length > 0) { 
+        searchResults.innerHTML = res.map(m => `<a class="post-card" href="${m.u}"><img src="${m.i}"><h2>${m.t}</h2></a>`).join(""); 
+    } else { 
+        searchResults.innerHTML = "<p style='color:white; text-align:center; width:100%; grid-column: 1 / -1; margin: 50px 0;'>No movies found!</p>"; 
+    }
+}
+if(input) input.addEventListener("input", performSearch);
+if(searchBtn) searchBtn.addEventListener("click", performSearch);
+</script>
+</html>
