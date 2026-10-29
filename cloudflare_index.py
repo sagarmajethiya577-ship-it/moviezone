@@ -7,7 +7,7 @@ from collections import defaultdict
 
 POSTS_DIR = "Posts"
 PLUS_DIR = "18+" # Aapka alag se banaya hua 18+ folder
-POSTS_PER_PAGE = 200
+POSTS_PER_PAGE = 220
 
 all_files = []
 collections = defaultdict(list)
